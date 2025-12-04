@@ -1,256 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brianna's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="mediaqueries.css">
-</head>
-<body>
-    <nav id="desktop-nav">
-        <div class="logo">Brianna Brockington</div>
-        <div>
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-    <nav id="hamburger-nav">
-        <div class="logo">Brianna Brockington</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-            </ul>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brianna Brockington — Portfolio</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+
+  <body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+      <div class="logo">Brianna Brockington</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
     </nav>
-    
-    <section id="profile">
-        <div class="section__pic-container">
-            <img src="./assets/profile-pic.jpg" height="300" width="300" alt="Brianna Brockington profile picture"> 
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+      <div class="hero-content">
+        <h1>Hello, I’m <span class="accent">Brianna</span></h1>
+        <h2>Software Engineer • Full Stack Developer</h2>
+        <p class="hero-subtitle">
+          I build elegant, modern, and intuitive digital experiences.
+        </p>
+
+        <div class="hero-buttons">
+          <button
+            onclick="window.open('./assets/brockingtonresume.pdf')"
+            class="btn primary"
+          >
+            Download CV
+          </button>
+          <button onclick="location.href='#contact'" class="btn secondary">
+            Contact Me
+          </button>
         </div>
-        <div class="section__text">
-            <p class="section__text__p1">Hello, I'm</p>
-            <h1 class="title">Brianna Brockington</h1>
-            <p class="section__text__p2">Full Stack Developer</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./assets/brockingtonresume.pdf')">Download CV</button>
-                <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Me</button>
-            </div>
-            <div id="socials-container">
-                <img src="./assets/linkedin.png" alt="My LinkedIn Profile" class="icon" onclick="location.href='https://www.linkedin.com/in/brianna-brockington-1b6a59a9/'">
-                <img src="./assets/github.png" alt="My GitHub Profile" class="icon" onclick="location.href='https://github.com/briannab1997'">
-            </div>
+
+        <div class="socials">
+          <img
+            src="./assets/linkedin.png"
+            onclick="window.open('https://www.linkedin.com/in/brianna-brockington-1b6a59a9/')"
+            class="social-icon"
+          />
+          <img
+            src="./assets/github.png"
+            onclick="window.open('https://github.com/briannab1997')"
+            class="social-icon"
+          />
         </div>
+      </div>
+      <div class="hero-img">
+        <img src="./assets/profile-pic.jpg" alt="Profile Picture" />
+      </div>
     </section>
+
+    <!-- ABOUT -->
     <section id="about">
-        <p class="section__text__p1">Get To Know More</p>
-        <h1 class="title">About Me</h1>
-        <div class="section-container">
-            <div class="section__pic-container">
-                <img src="./assets/about-pic.jpg" alt="Profile photo" class="about-pic">
-            </div>
-            <div class="about-details-container">
-                <div class="about-containers">
-                    <div class="details-container">
-                        <img src="./assets/experience.png" alt="Experience icon" class="icon">
-                    <h3>Experience</h3>
-                    <p>Software Engineering Student<br> Java Concentration</p>
-                    </div>
-                    <div class="details-container">
-                        <img src="./assets/education.png" alt="Education icon" class="icon">
-                        <h3>Education</h3>
-                        <p>B.Sc. Bachelors Degree<br> Western Governors University, Expected 2025
-                        <br>A.Sc Associates Degree<br> Ultimate Medical Academy, 2017</p>
-                    </div>
-                </div>
-                <div class="text-container">
-                    <p>TEST - ENTER EXPERIENCE HERE</p>
-                </div>
-            </div>
+      <h1 class="section-title">About Me</h1>
+
+      <div class="about-container">
+        <div class="about-image">
+          <img src="./assets/about-pic.jpg" alt="" />
         </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'">
+
+        <div class="about-text">
+          <p>
+            I'm Brianna Brockington — a Software Engineering student at Western
+            Governors University focused on full-stack development, cloud
+            computing, and building clean, impactful user experiences. I work
+            with Java, Python, JavaScript, C#, C++, and cloud tools like AWS.
+          </p>
+          <p>
+            Before tech, I worked as a Certified Pharmacy Technician, which
+            strengthened my precision, communication, and problem-solving
+            skills. Today, I combine those strengths with software engineering
+            to build elegant and scalable applications.
+          </p>
+        </div>
+      </div>
     </section>
-    <section id="experience">
-        <p class="section__text__p1">Explore My</p>
-        <h1 class="title">Experience</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <h2 class="experience-subtitle">Frontend Development</h2>
-                    <div class="article-container">
-                        <article>
-                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
-                            <div>
-                                <h3>HTML</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
-                            <div>
-                                <h3>CSS</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
-                            <div>
-                                <h3>JavaScript</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
-                            <div>
-                                <h3>Python</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
-                            <div>
-                                <h3>Angular</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
-                            <div>
-                                <h3>React</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-            <div class="details-container">
-                <h2 class="experience-subtitle">Backend Development</h2>
-                <div class="article-container">
-                    <article>
-                        <img src="./assets/checkmark.png" alt="experience icon" class="icon">
-                        <div>
-                            <h3>PostgreSQL</h3>
-                            <p>Intermediate</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="./assets/checkmark.png" alt="experience icon" class="icon">
-                        <div>
-                            <h3>NodeJS</h3>
-                            <p>Basic</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="./assets/checkmark.png" alt="experience icon" class="icon">
-                        <div>
-                            <h3>Java</h3>
-                            <p>Intermediate</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="./assets/checkmark.png" alt="experience icon" class="icon">
-                        <div>
-                            <h3>Git</h3>
-                            <p>Intermediate</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="./assets/checkmark.png" alt="experience icon" class="icon">
-                        <div>
-                            <h3>C#</h3>
-                            <p>Basic</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="./assets/checkmark.png" alt="experience icon" class="icon">
-                        <div>
-                            <h3>Ruby</h3>
-                            <p>Basic</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-        </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'">
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h1 class="section-title">Technical Skills</h1>
+
+      <div class="skills-grid">
+        <div class="skill-card">Java</div>
+        <div class="skill-card">Python</div>
+        <div class="skill-card">JavaScript</div>
+        <div class="skill-card">C#</div>
+        <div class="skill-card">C++</div>
+        <div class="skill-card">Angular</div>
+        <div class="skill-card">React</div>
+        <div class="skill-card">PostgreSQL</div>
+        <div class="skill-card">Git / GitHub</div>
+        <div class="skill-card">AWS Cloud</div>
+      </div>
     </section>
-<section id="projects">
-    <p class="section__text__p1">Browse My Recent</p>
-    <h1 class="title">Projects</h1>
-    <div class="experience-details-container">
-        <div class="about-containers">
-        <div class="details-container color-container">
-            <div class="article-container">
-                <img src="./assets/project-1.png" alt="Project 1" class="project-img">
-            </div>
-            <h2 class="experience-subtitle project-title">Project 1</h2>
-            <div class="button-container">
-                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/briannab1997'">GitHub</button>
-                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/briannab1997'">Live Demo - TO BE UPDATED</button>
-            </div>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h1 class="section-title">Projects</h1>
+
+      <div class="project-grid">
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+          <img src="./assets/project-travel.png" class="project-img" />
+          <h3>Travel Explorer</h3>
+          <p>
+            Interactive city explorer with live APIs, maps, weather,
+            attractions, and dark mode.
+          </p>
+          <div class="project-buttons">
+            <a
+              href="https://github.com/briannab1997/BBtravel-explorer"
+              class="btn secondary"
+              >GitHub</a
+            >
+            <a
+              href="https://briannab1997.github.io/BBtravel-explorer/"
+              class="btn primary"
+              >Live Demo</a
+            >
+          </div>
         </div>
-        <div class="details-container color-container">
-            <div class="article-container">
-                <img src="./assets/project-2.png" alt="Project 2" class="project-img">
-            </div>
-            <h2 class="experience-subtitle project-title">Project 2</h2>
-            <div class="button-container">
-                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/briannab1997'">GitHub</button>
-                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/briannab1997'">Live Demo - TO BE UPDATED</button>
-            </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+          <img src="./assets/project-age.png" class="project-img" />
+          <h3>Age Calculator</h3>
+          <p>Clean and responsive age calculator tool with error handling.</p>
+          <div class="project-buttons">
+            <a
+              href="https://github.com/briannab1997/agecalculator"
+              class="btn secondary"
+              >GitHub</a
+            >
+            <a
+              href="https://briannab1997.github.io/agecalculator/"
+              class="btn primary"
+              >Live Demo</a
+            >
+          </div>
         </div>
-        <div class="details-container color-container">
-            <div class="article-container">
-                <img src="./assets/project-3.png" alt="Project 3" class="project-img">
-            </div>
-            <h2 class="experience-subtitle project-title">Project 3</h2>
-            <div class="button-container">
-                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/briannab1997'">GitHub</button>
-                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/briannab1997'">Live Demo - TO BE UPDATED</button>
-            </div>
+
+        <!-- PROJECT 3 (Placeholder until ready) -->
+        <div class="project-card">
+          <img src="./assets/project-placeholder.png" class="project-img" />
+          <h3>Coming Soon</h3>
+          <p>More full-stack, cloud, and API-driven projects launching soon.</p>
+          <div class="project-buttons">
+            <button class="btn secondary disabled">GitHub</button>
+            <button class="btn primary disabled">Live Demo</button>
+          </div>
         </div>
-    </div>
-    </div>
-</section>
-<section id="contact">
-    <p class="section__text__p1">Get In Touch</p>
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-            <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon">
-            <p><a href="mailto:briannab1997@gmail.com">Briannab1997@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-            <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon">
-            <p><a href="https://www.linkedin.com/in/brianna-brockington-1b6a59a9">LinkedIn</a></p>
-        </div>
-    </div>
-</section>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h1 class="section-title">Let's Connect</h1>
+
+      <div class="contact-box">
+        <p>Email me at:</p>
+        <a href="mailto:briannab1997@gmail.com" class="email-link"
+          >briannab1997@gmail.com</a
+        >
+      </div>
+    </section>
+
     <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-        <p>Copyright &#169; Brianna Brockington. All Rights Reserved.</p>
+      <p>© 2025 Brianna Brockington — All Rights Reserved.</p>
     </footer>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
