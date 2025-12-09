@@ -1,5 +1,5 @@
 /* ------------------------------------------------------- */
-/* GENERAL STYLE */
+/* Bri’s General Style Vibes — clean, soft, elegant */
 /* ------------------------------------------------------- */
 
 * {
@@ -12,9 +12,10 @@ body {
   font-family: "Poppins", sans-serif;
   background: #fff7fb;
   color: #333;
+  transition: background 0.3s, color 0.3s;
 }
 
-/* Accent Rose Gold */
+/* My rose-gold aesthetic 💕 */
 :root {
   --accent: #d787a3;
   --accent-light: #f2c9d9;
@@ -23,7 +24,30 @@ body {
 }
 
 /* ------------------------------------------------------- */
-/* NAVIGATION */
+/* DARK MODE — for the cozy coders */
+/* ------------------------------------------------------- */
+
+body.dark {
+  background: #1a1a1a;
+  color: #f5f5f5;
+}
+
+body.dark .navbar {
+  background: rgba(20, 20, 20, 0.9);
+}
+
+body.dark .project-card,
+body.dark .skill-card {
+  background: rgba(40, 40, 40, 0.4);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark footer {
+  color: #ccc;
+}
+
+/* ------------------------------------------------------- */
+/* NAVIGATION — cute + simple + functional */
 /* ------------------------------------------------------- */
 
 .navbar {
@@ -37,6 +61,13 @@ body {
   background: white;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
   z-index: 1000;
+  transition: padding 0.3s, background 0.3s;
+}
+
+.navbar.shrink {
+  padding: 0.6rem 3rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -61,7 +92,16 @@ body {
   color: var(--accent);
 }
 
-/* Hamburger for mobile */
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+/* Hamburger (mobile only) */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -81,10 +121,11 @@ body {
 /* ------------------------------------------------------- */
 
 #hero {
-  padding: 8rem 3rem 4rem;
+  padding: 9rem 3rem 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .hero-content {
@@ -92,7 +133,7 @@ body {
 }
 
 #hero h1 {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: 700;
 }
 
@@ -102,7 +143,7 @@ body {
 
 #hero h2 {
   margin-top: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: #555;
 }
 
@@ -117,8 +158,15 @@ body {
   gap: 1rem;
 }
 
+/* Hero Image */
+.hero-img img {
+  width: 330px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
 /* ------------------------------------------------------- */
-/* BUTTONS */
+/* BUTTONS — soft + bold when needed */
 /* ------------------------------------------------------- */
 
 .btn {
@@ -156,7 +204,10 @@ body {
   cursor: not-allowed;
 }
 
+/* ------------------------------------------------------- */
 /* SOCIAL ICONS */
+/* ------------------------------------------------------- */
+
 .socials {
   margin-top: 2rem;
   display: flex;
@@ -173,13 +224,6 @@ body {
   transform: scale(1.1);
 }
 
-/* HERO IMAGE */
-.hero-img img {
-  width: 330px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
 /* ------------------------------------------------------- */
 /* ABOUT */
 /* ------------------------------------------------------- */
@@ -190,12 +234,12 @@ body {
 
 .section-title {
   text-align: center;
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   color: var(--accent);
+  margin-bottom: 2rem;
 }
 
 .about-container {
-  margin-top: 3rem;
   display: flex;
   gap: 3rem;
   align-items: center;
@@ -235,21 +279,22 @@ body {
 }
 
 /* ------------------------------------------------------- */
-/* PROJECT CARDS */
+/* PROJECT CARDS — glassmorphism for the luxe feel */
 /* ------------------------------------------------------- */
 
 .project-grid {
-  margin-top: 4rem;
+  margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
+  gap: 2.2rem;
 }
 
 .project-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(18px);
   padding: 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   transition: 0.3s;
 }
 
@@ -273,7 +318,7 @@ body {
 /* ------------------------------------------------------- */
 
 #contact {
-  padding: 6rem 3rem;
+  padding: 5rem 3rem;
   text-align: center;
 }
 
@@ -300,4 +345,20 @@ footer {
   padding: 2rem;
   text-align: center;
   color: #777;
+  margin-top: 2rem;
+}
+
+/* ------------------------------------------------------- */
+/* SCROLL FADE EFFECT */
+/* ------------------------------------------------------- */
+
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

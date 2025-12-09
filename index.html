@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brianna Brockington — Portfolio</title>
 
-    <!-- Fonts -->
+    <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -20,24 +20,31 @@
     <!-- NAVIGATION -->
     <nav class="navbar">
       <div class="logo">Brianna Brockington</div>
+
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+
+      <!-- cute little dark mode toggle -->
+      <button id="themeToggle" class="theme-toggle">🌙</button>
+
+      <!-- Mobile Hamburger -->
       <div class="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <section id="hero">
+    <section id="hero" class="fade-section">
       <div class="hero-content">
-        <h1>Hello, I’m <span class="accent">Brianna</span></h1>
+        <h1>Hello, I’m <span class="accent">Brianna 🤎 </span></h1>
         <h2>Software Engineer • Full Stack Developer</h2>
         <p class="hero-subtitle">
-          I build elegant, modern, and intuitive digital experiences.
+          I build clean, elegant, and user-focused digital experiences that feel
+          effortless.
         </p>
 
         <div class="hero-buttons">
@@ -55,23 +62,24 @@
         <div class="socials">
           <img
             src="./assets/linkedin.png"
-            onclick="window.open('https://www.linkedin.com/in/brianna-brockington-1b6a59a9/')"
             class="social-icon"
+            onclick="window.open('https://www.linkedin.com/in/brianna-brockington-1b6a59a9/')"
           />
           <img
             src="./assets/github.png"
-            onclick="window.open('https://github.com/briannab1997')"
             class="social-icon"
+            onclick="window.open('https://github.com/briannab1997')"
           />
         </div>
       </div>
+
       <div class="hero-img">
         <img src="./assets/profile-pic.jpg" alt="Profile Picture" />
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about">
+    <section id="about" class="fade-section">
       <h1 class="section-title">About Me</h1>
 
       <div class="about-container">
@@ -81,23 +89,29 @@
 
         <div class="about-text">
           <p>
-            I'm Brianna Brockington — a Software Engineering student at Western
-            Governors University focused on full-stack development, cloud
-            computing, and building clean, impactful user experiences. I work
-            with Java, Python, JavaScript, C#, C++, and cloud tools like AWS.
+            I’m Brianna Brockington, a Software Engineering student at Western
+            Governors University, diving deep into full-stack development, cloud
+            computing, and writing clean, scalable code.
           </p>
+
           <p>
-            Before tech, I worked as a Certified Pharmacy Technician, which
-            strengthened my precision, communication, and problem-solving
-            skills. Today, I combine those strengths with software engineering
-            to build elegant and scalable applications.
+            I work with Java, Python, JavaScript, C#, C++, Angular, React,
+            PostgreSQL, and AWS Cloud. Before tech, I spent years as a Certified
+            Pharmacy Technician — so trust me, precision, problem-solving, and
+            communication are in my DNA.
+          </p>
+
+          <p>
+            Today, I’m blending those strengths with software engineering to
+            create experiences that feel thoughtful, intuitive, and beautifully
+            built.
           </p>
         </div>
       </div>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills">
+    <section id="skills" class="fade-section">
       <h1 class="section-title">Technical Skills</h1>
 
       <div class="skills-grid">
@@ -115,17 +129,17 @@
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects">
+    <section id="projects" class="fade-section">
       <h1 class="section-title">Projects</h1>
 
       <div class="project-grid">
         <!-- PROJECT 1 -->
-        <div class="project-card">
+        <div class="project-card glass">
           <img src="./assets/project-travel.png" class="project-img" />
           <h3>Travel Explorer</h3>
           <p>
-            Interactive city explorer with live APIs, maps, weather,
-            attractions, and dark mode.
+            A beautiful, API-powered travel search tool with live weather,
+            attractions, and responsive UI.
           </p>
           <div class="project-buttons">
             <a
@@ -142,10 +156,13 @@
         </div>
 
         <!-- PROJECT 2 -->
-        <div class="project-card">
+        <div class="project-card glass">
           <img src="./assets/project-age.png" class="project-img" />
           <h3>Age Calculator</h3>
-          <p>Clean and responsive age calculator tool with error handling.</p>
+          <p>
+            A clean, responsive calculator tool with built-in validation and
+            error states.
+          </p>
           <div class="project-buttons">
             <a
               href="https://github.com/briannab1997/agecalculator"
@@ -160,10 +177,11 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <!-- Coming Soon -->
+        <div class="project-card glass">
           <img src="./assets/project-placeholder.png" class="project-img" />
           <h3>Coming Soon</h3>
-          <p>More full-stack, cloud, and API-driven projects launching soon.</p>
+          <p>More full-stack, cloud, and API projects are on the way 🩷</p>
           <div class="project-buttons">
             <button class="btn secondary disabled">GitHub</button>
             <button class="btn primary disabled">Live Demo</button>
@@ -173,8 +191,8 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
-      <h1 class="section-title">Let's Connect</h1>
+    <section id="contact" class="fade-section">
+      <h1 class="section-title">Let’s Connect</h1>
 
       <div class="contact-box">
         <p>Email me at:</p>
