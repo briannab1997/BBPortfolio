@@ -16,10 +16,10 @@
   </head>
 
   <body>
-    <!-- lil progress bar because we’re fancy -->
+    <!-- Progress bar -->
     <div id="scrollBar"></div>
 
-    <!-- floating rose-gold sparkles -->
+    <!-- Floating sparkles -->
     <canvas id="sparkleCanvas"></canvas>
 
     <!-- NAVBAR -->
@@ -30,6 +30,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Résumé</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
@@ -46,7 +47,6 @@
         <h1>Hello, I’m <span class="accent shimmering-text">Brianna</span></h1>
 
         <h2 id="roleText">Software Engineer</h2>
-        <!-- will animate -->
 
         <p class="hero-subtitle">
           I build elegant, modern, intuitive digital experiences.
@@ -95,15 +95,14 @@
         <div class="about-text">
           <p>
             I'm Brianna — a Software Engineering student focused on full-stack
-            development, cloud computing, and building beautiful, intuitive
-            apps.
+            development, QA engineering, automation, and cloud computing.
           </p>
 
           <p>
-            I work with Java, Python, JavaScript, AWS, C#, C++, Angular, and
-            database systems. Before tech, I was a Certified Pharmacy
-            Technician, which sharpened my precision and problem-solving skills.
-            Now I apply those strengths to software engineering every day.
+            I work with Java, Python, JavaScript, AWS, C#, C++, and database
+            systems. Before tech, I was a Certified Pharmacy Technician, which
+            sharpened my precision and problem-solving skills. Now I apply those
+            strengths to software engineering and quality assurance every day.
           </p>
         </div>
       </div>
@@ -124,6 +123,11 @@
         <div class="skill-card">PostgreSQL</div>
         <div class="skill-card">Git / GitHub</div>
         <div class="skill-card">AWS Cloud</div>
+        <div class="skill-card">Manual Testing</div>
+        <div class="skill-card">API Testing (Postman)</div>
+        <div class="skill-card">Jira</div>
+        <div class="skill-card">Chrome DevTools</div>
+        <div class="skill-card">SDLC / STLC</div>
       </div>
     </section>
 
@@ -132,7 +136,6 @@
       <h1 class="section-title">Projects</h1>
 
       <div class="project-grid">
-        <!-- TRAVEL EXPLORER -->
         <div class="project-card fade-card">
           <img src="./assets/travelguide.png" class="project-img" />
           <h3>Travel Explorer</h3>
@@ -152,7 +155,6 @@
           </div>
         </div>
 
-        <!-- AGE CALCULATOR -->
         <div class="project-card fade-card">
           <img src="./assets/zodiacsite.png" class="project-img" />
           <h3>Age Calculator</h3>
@@ -172,17 +174,43 @@
           </div>
         </div>
 
-        <!-- Coming Soon -->
         <div class="project-card fade-card">
           <img src="./assets/project-placeholder.png" class="project-img" />
           <h3>More Projects Coming</h3>
-          <p>More full-stack + cloud builds dropping soon.</p>
+          <p>More full-stack + QA + cloud builds dropping soon.</p>
 
           <div class="project-buttons">
             <button class="btn secondary disabled">GitHub</button>
             <button class="btn primary disabled">Live Demo</button>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- RÉSUMÉ SECTION -->
+    <section id="resume" class="reveal">
+      <h1 class="section-title">Résumé Snapshot</h1>
+
+      <div class="resume-card">
+        <h2 class="resume-name">Brianna Brockington</h2>
+        <p class="resume-role">
+          Software Engineering Student • QA Analyst • IT Support • Cloud Learner
+        </p>
+
+        <div class="resume-summary">
+          Detail-oriented Software Engineering student with strong foundations
+          in Quality Assurance, IT Support, and Full-Stack Development. Skilled
+          in manual testing, API testing, debugging, Java, Python, JavaScript,
+          SQL, and cloud technologies. Passionate about building beautiful,
+          intuitive, high-quality digital experiences.
+        </div>
+
+        <button
+          class="resume-download"
+          onclick="window.open('./assets/brockingtonresume.pdf')"
+        >
+          Download Full CV
+        </button>
       </div>
     </section>
 
