@@ -82,21 +82,6 @@ function revealOnScroll() {
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
 
-const hero = document.getElementById("hero");
-const heroImg = document.querySelector(".hero-img img");
-
-if (heroImg) {
-  hero.addEventListener("mousemove", (e) => {
-    let x = (window.innerWidth / 2 - e.pageX) * 0.01;
-    let y = (window.innerHeight / 2 - e.pageY) * 0.01;
-    heroImg.style.transform = `translate(${x}px, ${y}px)`;
-  });
-
-  hero.addEventListener("mouseleave", () => {
-    heroImg.style.transform = "translate(0px, 0px)";
-  });
-}
-
 const rotatingWords = [
   "Software Engineer",
   "Full Stack Developer",
@@ -108,7 +93,7 @@ const rotatingWords = [
 ];
 
 let wordIndex = 0;
-const subtitle = document.querySelector("#hero h2");
+const subtitle = document.querySelector(".hero h2");
 
 function rotateTitle() {
   if (!subtitle) return;
@@ -123,7 +108,7 @@ function rotateTitle() {
 setInterval(rotateTitle, 2800);
 
 window.addEventListener("scroll", () => {
-  const heroSection = document.getElementById("hero");
+  const heroSection = document.querySelector(".hero");
   let scale = 1 - window.scrollY / 1400;
   if (scale < 0.85) scale = 0.85;
   heroSection.style.transform = `scale(${scale})`;

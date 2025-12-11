@@ -1,4 +1,19 @@
-#hero {
+:root {
+  --accent: #d787a3;
+}
+
+body {
+  background: #fcecf8;
+  color: #333;
+  transition: 0.3s ease;
+}
+
+nav {
+  background: #1a1a1a;
+  color: white;
+}
+
+.hero {
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -8,49 +23,38 @@
   background: linear-gradient(135deg, #fff0f7, #fde9f2);
 }
 
-#hero-text-group {
-  max-width: 600px;
-}
-
-#hero h1 {
+.hero h1 {
   font-size: 4rem;
   font-weight: 700;
-  margin: 0;
   color: #333;
 }
 
-#hero h2 {
+.hero h2 {
   font-size: 3rem;
-  margin: 0;
   color: #555;
 }
 
-#hero .accent {
-  font-size: 1.5rem;
-  color: var(--accent);
+.hero p {
+  font-size: 1.25rem;
+  margin-top: 1rem;
 }
 
 #hero-buttons {
+  margin-top: 2rem;
   display: flex;
   gap: 1rem;
-  margin-top: 2rem;
-}
-
-#hero-buttons a {
-  padding: 0.9rem 1.8rem;
-  font-size: 1rem;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: 0.3s ease;
 }
 
 #download-btn {
   background: var(--accent);
-  color: #fff;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
 }
 
 #contact-btn {
-  background: transparent;
+  padding: 1rem 2rem;
+  border-radius: 12px;
   border: 2px solid var(--accent);
   color: var(--accent);
 }
@@ -64,18 +68,6 @@
 #social-icons img {
   width: 45px;
   height: 45px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-#social-icons img:hover {
-  transform: scale(1.1);
-}
-
-#hero-img-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 #hero-img {
@@ -86,24 +78,48 @@
   object-fit: cover;
 }
 
-/* DARK MODE FIXES */
+/* DARK MODE */
 
-body.dark #hero {
+body.dark {
+  background: #0d0d0d;
+  color: #f5f5f5;
+}
+
+body.dark nav {
+  background: #111;
+  color: white;
+}
+
+body.dark .hero {
   background: linear-gradient(135deg, #181818, #0f0f0f);
 }
 
-body.dark #hero h1 {
+body.dark .hero h1 {
   color: #fafafa;
 }
 
-body.dark #hero h2 {
+body.dark .hero h2 {
   color: #e5e5e5;
 }
 
-body.dark #hero .accent {
-  color: #ff9ecb;
+body.dark .hero p {
+  color: #ddd;
+}
+
+body.dark #download-btn {
+  background: #e9a6c4;
+  color: #111;
+}
+
+body.dark #contact-btn {
+  border-color: #f5f5f5;
+  color: #f5f5f5;
 }
 
 body.dark #social-icons img {
-  filter: brightness(0.9);
+  filter: invert(1);
+}
+
+body.dark #hero-img {
+  border-color: #f5f5f5;
 }

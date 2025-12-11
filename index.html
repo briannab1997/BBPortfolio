@@ -3,19 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brianna Brockington — Portfolio</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <title>Brianna Brockington</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
   </head>
-
   <body>
-    <div id="scrollBar"></div>
-    <canvas id="sparkleCanvas"></canvas>
-
-    <nav class="navbar">
+    <nav>
       <div class="logo">Brianna Brockington</div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -24,212 +17,105 @@
         <li><a href="#resume">Résumé</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button id="themeToggle" class="theme-btn">🌙</button>
-      <div class="hamburger" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-      </div>
+      <button id="theme-toggle" class="theme-toggle">🌙</button>
     </nav>
 
-    <section id="hero" class="reveal">
-      <div class="hero-content">
-        <h1>Hello, I’m <span class="accent shimmering-text">Brianna</span></h1>
-        <h2 id="roleText">Software Engineer</h2>
-        <p class="hero-subtitle">
-          I build elegant, modern, intuitive digital experiences.
-        </p>
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Hello, I’m<br />Brianna</h1>
+        <h2>QA Analyst</h2>
+        <p>I build elegant, modern, intuitive digital experiences.</p>
 
         <div class="hero-buttons">
-          <button
-            class="btn primary"
-            onclick="window.open('./assets/bbtechresume25.pdf')"
+          <a href="assets/bbtechresume25.pdf" class="btn-primary"
+            >Download CV</a
           >
-            Download CV
-          </button>
-          <button class="btn secondary" onclick="location.href='#contact'">
-            Contact Me
-          </button>
+          <a href="#contact" class="btn-secondary">Contact Me</a>
         </div>
 
-        <div class="socials">
-          <img
-            src="./assets/linkedin.png"
-            class="social-icon"
-            onclick="window.open('https://www.linkedin.com/in/brianna-brockington-1b6a59a9/')"
-          />
-          <img
-            src="./assets/github.png"
-            class="social-icon"
-            onclick="window.open('https://github.com/briannab1997')"
-          />
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/briannabrockington/"
+            ><img src="assets/linkedin.png"
+          /></a>
+          <a href="https://github.com/briannab1997"
+            ><img src="assets/github.png"
+          /></a>
         </div>
       </div>
 
-      <div class="hero-img">
-        <img src="./assets/profile-pic.jpg" alt="Profile Picture" />
+      <div class="hero-right">
+        <img src="assets/profile-pic.jpg" class="profile-img" />
       </div>
     </section>
 
-    <section id="about" class="reveal">
-      <h1 class="section-title">About Me</h1>
-      <div class="about-container">
-        <div class="about-image">
-          <img src="./assets/about-pic.jpg" alt="About Me" />
-        </div>
-        <div class="about-text">
-          <p>
-            I'm Brianna — a Software Engineering student focused on full-stack
-            development, QA engineering, automation, and cloud computing.
-          </p>
-          <p>
-            I work with Java, Python, JavaScript, AWS, C#, C++, and database
-            systems. Before tech, I was a Certified Pharmacy Technician, which
-            sharpened my precision and problem-solving skills.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="reveal">
-      <h1 class="section-title">Technical Skills</h1>
-      <div class="skills-grid">
-        <div class="skill-card">Java</div>
-        <div class="skill-card">Python</div>
-        <div class="skill-card">JavaScript</div>
-        <div class="skill-card">C#</div>
-        <div class="skill-card">C++</div>
-        <div class="skill-card">Angular</div>
-        <div class="skill-card">React</div>
-        <div class="skill-card">PostgreSQL</div>
-        <div class="skill-card">Git / GitHub</div>
-        <div class="skill-card">AWS Cloud</div>
-        <div class="skill-card">Manual Testing</div>
-        <div class="skill-card">API Testing</div>
-        <div class="skill-card">Jira</div>
-        <div class="skill-card">Chrome DevTools</div>
-        <div class="skill-card">SDLC / STLC</div>
-      </div>
-    </section>
-
-    <section id="projects" class="reveal">
-      <h1 class="section-title">Projects</h1>
-
+    <section id="projects" class="projects">
+      <h2>Featured Projects</h2>
       <div class="project-grid">
         <div class="project-card">
-          <img src="./assets/qaportscreenshot.png" class="project-img" />
+          <img src="assets/qaportscreenshot.png" />
           <h3>Quality Assurance Portfolio</h3>
           <p>
             A comprehensive QA portfolio featuring mobile testing, UI/UX
-            analysis, exploratory testing, bug reporting, accessibility review,
-            API validation, and structured documentation.
+            analysis, exploratory testing, bug reports, and an API automation
+            suite.
           </p>
-          <div class="project-buttons">
+          <div class="project-links">
             <a
               href="https://github.com/briannab1997/qa-portfolio"
-              class="btn secondary"
+              class="btn-secondary"
               >GitHub</a
             >
             <a
               href="https://briannab1997.github.io/qa-portfolio/"
-              class="btn primary"
-              >View Files</a
+              class="btn-primary"
+              >Live Demo</a
             >
           </div>
         </div>
 
         <div class="project-card">
-          <img src="./assets/blossomscreenshot.png" class="project-img" />
+          <img src="assets/blossomscreenshot.png" />
           <h3>BlossomAI</h3>
           <p>
-            A customized AI companion offering emotional intelligence,
-            personalized tones, name recognition, and supportive relational
-            conversations using dynamic prompts and API integration.
+            A personalized AI companion with emotional intelligence,
+            customizable tones, name recognition, and structured relational
+            support.
           </p>
-          <div class="project-buttons">
+          <div class="project-links">
             <a
               href="https://github.com/briannab1997/bb-blossom-ai"
-              class="btn secondary"
+              class="btn-secondary"
               >GitHub</a
             >
             <a
               href="https://briannab1997.github.io/bb-blossom-ai/"
-              class="btn primary"
+              class="btn-primary"
               >Live Demo</a
             >
           </div>
         </div>
 
         <div class="project-card">
-          <img src="./assets/travelguide.png" class="project-img" />
+          <img src="assets/project-1.png" />
           <h3>Travel Explorer</h3>
-          <p>Live weather, attractions, images, and maps in a clean UI.</p>
-          <div class="project-buttons">
-            <a
-              href="https://github.com/briannab1997/BBtravel-explorer"
-              class="btn secondary"
-              >GitHub</a
-            >
-            <a
-              href="https://briannab1997.github.io/BBtravel-explorer/"
-              class="btn primary"
-              >Live Demo</a
-            >
+          <p>Live weather, attractions, maps, and images in a clean UI.</p>
+          <div class="project-links">
+            <a href="#" class="btn-secondary">GitHub</a>
+            <a href="#" class="btn-primary">Live Demo</a>
           </div>
         </div>
 
         <div class="project-card">
-          <img src="./assets/zodiacsite.png" class="project-img" />
+          <img src="assets/project-2.png" />
           <h3>Age Calculator</h3>
-          <p>
-            A user-friendly modern tool for calculating age and astrological
-            details.
-          </p>
-          <div class="project-buttons">
-            <a
-              href="https://github.com/briannab1997/agecalculator"
-              class="btn secondary"
-              >GitHub</a
-            >
-            <a
-              href="https://briannab1997.github.io/agecalculator/"
-              class="btn primary"
-              >Live Demo</a
-            >
+          <p>Simple, clean, user-friendly date and zodiac calculation tool.</p>
+          <div class="project-links">
+            <a href="#" class="btn-secondary">GitHub</a>
+            <a href="#" class="btn-primary">Live Demo</a>
           </div>
         </div>
       </div>
     </section>
-
-    <section id="resume" class="reveal">
-      <h1 class="section-title">Résumé Snapshot</h1>
-      <div class="resume-card">
-        <h2 class="resume-name">Brianna Brockington</h2>
-        <p class="resume-role">
-          Software Engineering Student • QA Analyst • Cloud Learner
-        </p>
-        <div class="resume-summary">
-          Detail-oriented SE student with strong foundations in QA, IT support,
-          debugging, manual testing, API testing, and cloud technologies.
-        </div>
-        <button
-          class="resume-download"
-          onclick="window.open('./assets/bbtechresume25.pdf')"
-        >
-          Download Full CV
-        </button>
-      </div>
-    </section>
-
-    <section id="contact" class="reveal">
-      <h1 class="section-title">Let's Connect</h1>
-      <div class="contact-box">
-        <p>Email me at:</p>
-        <a href="mailto:briannab1997@gmail.com" class="email-link"
-          >briannab1997@gmail.com</a
-        >
-      </div>
-    </section>
-
-    <footer><p>© 2025 Brianna Brockington — All Rights Reserved.</p></footer>
 
     <script src="script.js"></script>
   </body>
