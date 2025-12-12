@@ -1,9 +1,5 @@
-function toggleMenu() {
-  const links = document.querySelector(".nav-links");
-  links.classList.toggle("open");
-}
-
-const themeBtn = document.querySelector(".theme-btn");
+/* ---------------- THEME TOGGLE ---------------- */
+const themeBtn = document.querySelector("#theme-toggle");
 const body = document.body;
 const savedTheme = localStorage.getItem("theme");
 
@@ -11,92 +7,33 @@ if (savedTheme === "dark") {
   body.classList.add("dark");
 }
 
-if (themeBtn) {
-  themeBtn.addEventListener("click", () => {
-    body.classList.toggle("dark");
-    if (body.classList.contains("dark")) {
-      localStorage.setItem("theme", "dark");
-    } else {
-      localStorage.setItem("theme", "light");
-    }
-  });
-}
-
-const scrollBar = document.getElementById("scrollBar");
-
-window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.body.scrollHeight - window.innerHeight;
-  const scrolled = (scrollTop / docHeight) * 100;
-  scrollBar.style.width = scrolled + "%";
+themeBtn.addEventListener("click", () => {
+  body.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    body.classList.contains("dark") ? "dark" : "light"
+  );
 });
 
-const sparkleCanvas = document.getElementById("sparkleCanvas");
-const ctx = sparkleCanvas.getContext("2d");
-
-function resizeCanvas() {
-  sparkleCanvas.width = window.innerWidth;
-  sparkleCanvas.height = window.innerHeight;
-}
-
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
-
-let sparkles = [];
-for (let i = 0; i < 60; i++) {
-  sparkles.push({
-    x: Math.random() * sparkleCanvas.width,
-    y: Math.random() * sparkleCanvas.height,
-    radius: Math.random() * 2 + 1,
-    alpha: Math.random() * 0.6 + 0.2,
-    drift: Math.random() * 0.5 + 0.2,
-  });
-}
-
-function animateSparkles() {
-  ctx.clearRect(0, 0, sparkleCanvas.width, sparkleCanvas.height);
-  sparkles.forEach((s) => {
-    ctx.beginPath();
-    ctx.fillStyle = `rgba(215, 135, 163, ${s.alpha})`;
-    ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
-    ctx.fill();
-    s.y -= s.drift;
-    if (s.y < 0) s.y = sparkleCanvas.height;
-  });
-  requestAnimationFrame(animateSparkles);
-}
-
-animateSparkles();
-
-const revealElements = document.querySelectorAll(".reveal");
-
-function revealOnScroll() {
-  revealElements.forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      el.classList.add("visible");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-
+/* ---------------- ROTATING TITLES ---------------- */
 const rotatingWords = [
-  "Software Engineer",
+  "Software Engineering Student",
   "Full Stack Developer",
-  "Cloud Practitioner",
-  "QA Analyst",
+  "Certified AWS Cloud Practitioner",
+  "Junior QA Analyst",
   "Automation Engineer",
   "Problem Solver",
   "System Thinker",
+  "Innovator",
+  "Learner",
+  "IT Analyst",
+  "Pharmacy Technician",
 ];
 
 let wordIndex = 0;
-const subtitle = document.querySelector(".hero h2");
+const subtitle = document.querySelector(".hero-left h2");
 
 function rotateTitle() {
-  if (!subtitle) return;
   subtitle.style.opacity = 0;
   setTimeout(() => {
     wordIndex = (wordIndex + 1) % rotatingWords.length;
@@ -107,9 +44,63 @@ function rotateTitle() {
 
 setInterval(rotateTitle, 2800);
 
+/* ---------------- SCROLL ANIMATIONS ---------------- */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) entry.target.classList.add("visible");
+  });
+});
+
+document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+
+/* ---------------- SPARKLE BACKGROUND ---------------- */
+const sparkleCanvas = document.getElementById("sparkle-canvas");
+const ctx = sparkleCanvas.getContext("2d");
+
+function resizeCanvas() {
+  sparkleCanvas.width = window.innerWidth;
+  sparkleCanvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+let sparkles = [];
+function createSparkles() {
+  sparkles = [];
+  for (let i = 0; i < 80; i++) {
+    sparkles.push({
+      x: Math.random() * sparkleCanvas.width,
+      y: Math.random() * sparkleCanvas.height,
+      r: Math.random() * 2 + 1,
+      a: Math.random() * 0.8 + 0.3,
+      drift: Math.random() * 0.4 + 0.2,
+    });
+  }
+}
+createSparkles();
+
+function animateSparkles() {
+  ctx.clearRect(0, 0, sparkleCanvas.width, sparkleCanvas.height);
+
+  sparkles.forEach((s) => {
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(215,135,163,${s.a})`;
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fill();
+
+    s.y -= s.drift;
+    if (s.y < 0) s.y = sparkleCanvas.height;
+  });
+
+  requestAnimationFrame(animateSparkles);
+}
+
+animateSparkles();
+
+/* ---------------- PARALLAX HERO ---------------- */
+const hero = document.querySelector(".hero");
+
 window.addEventListener("scroll", () => {
-  const heroSection = document.querySelector(".hero");
-  let scale = 1 - window.scrollY / 1400;
-  if (scale < 0.85) scale = 0.85;
-  heroSection.style.transform = `scale(${scale})`;
+  const offset = window.scrollY * 0.12;
+  hero.style.transform = `translateY(${offset}px)`;
 });

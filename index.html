@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
+
   <body>
+    <canvas id="sparkle-canvas"></canvas>
+
     <nav>
       <div class="logo">Brianna Brockington</div>
       <ul class="nav-links">
@@ -20,38 +23,101 @@
       <button id="theme-toggle" class="theme-toggle">🌙</button>
     </nav>
 
-    <section class="hero">
+    <section class="hero fade-up">
       <div class="hero-left">
-        <h1>Hello, I’m<br />Brianna</h1>
+        <h1 class="glow-hover">Hello, I’m<br />Brianna</h1>
         <h2>QA Analyst</h2>
         <p>I build elegant, modern, intuitive digital experiences.</p>
 
         <div class="hero-buttons">
-          <a href="assets/bbtechresume25.pdf" class="btn-primary"
+          <a href="assets/bbtechresume25.pdf" class="btn-primary glow-hover"
             >Download CV</a
           >
-          <a href="#contact" class="btn-secondary">Contact Me</a>
+          <a href="#contact" class="btn-secondary glow-hover">Contact Me</a>
         </div>
 
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/briannabrockington/"
-            ><img src="assets/linkedin.png"
-          /></a>
-          <a href="https://github.com/briannab1997"
-            ><img src="assets/github.png"
-          /></a>
+          <a href="https://www.linkedin.com/in/brianna-brockington-1b6a59a9/">
+            <img src="assets/linkedin.png" />
+          </a>
+          <a href="https://github.com/briannab1997">
+            <img src="assets/github.png" />
+          </a>
         </div>
       </div>
 
-      <div class="hero-right">
-        <img src="assets/profile-pic.jpg" class="profile-img" />
+      <div class="hero-right fade-up">
+        <img src="assets/profile-pic.jpg" class="profile-img glow-hover" />
       </div>
     </section>
 
-    <section id="projects" class="projects">
+    <div class="divider"></div>
+
+    <section id="about" class="about-section fade-up">
+      <h2>About Me</h2>
+
+      <div class="about-content">
+        <div class="about-img-wrapper">
+          <img
+            src="assets/about-pic.jpg"
+            class="about-img glow-hover"
+            alt="Brianna portrait"
+          />
+        </div>
+
+        <div class="about-text">
+          <p>
+            I’m Brianna — a Software Engineering student and QA Analyst
+            passionate about creating clean, intuitive, dependable digital
+            experiences. I love building things that feel thoughtful and
+            polished — and breaking things just enough to make them stronger.
+          </p>
+
+          <p>
+            I bring hands-on experience in manual QA, UI/UX evaluation,
+            exploratory testing, bug reporting, SQL validation, and API testing
+            with Postman. On the engineering side, I work with Java, Python,
+            JavaScript, C#, and AWS fundamentals, blending creative
+            problem-solving with strong technical depth.
+          </p>
+
+          <p>
+            Before transitioning into tech, I spent six years in healthcare as a
+            certified pharmacy technician — sharpening documentation precision,
+            attention to detail, pattern recognition, and calm problem-solving
+            under pressure.
+          </p>
+
+          <p>
+            I’m growing toward roles in QA, IT, and software engineering, with
+            long-term goals in automation, cloud engineering, and building
+            digital experiences that feel meaningful and impactful.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="skills" class="skills-section fade-up">
+      <h2>Skills</h2>
+      <p class="skills-text">
+        Manual QA • Test Case Writing • Bug Reporting • Exploratory Testing •
+        Regression Testing • UI/UX Evaluation • SQL Queries • API Testing •
+        Agile • SDLC • STLC • Java • Python • JavaScript • C# • HTML/CSS •
+        Git/GitHub • POST / GET API Validation • Automation Foundations • AWS
+        Cloud Practitioner Knowledge • Responsive Design • Problem Solving •
+        Attention to Detail • Documentation • Communication
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="projects" class="projects fade-up">
       <h2>Featured Projects</h2>
+
       <div class="project-grid">
-        <div class="project-card">
+        <div class="project-card glow-hover">
           <img src="assets/qaportscreenshot.png" />
           <h3>Quality Assurance Portfolio</h3>
           <p>
@@ -73,13 +139,12 @@
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card glow-hover">
           <img src="assets/blossomscreenshot.png" />
           <h3>BlossomAI</h3>
           <p>
-            A personalized AI companion with emotional intelligence,
-            customizable tones, name recognition, and structured relational
-            support.
+            Personalized AI companion with emotional intelligence, name
+            recognition, and customized tones.
           </p>
           <div class="project-links">
             <a
@@ -95,8 +160,8 @@
           </div>
         </div>
 
-        <div class="project-card">
-          <img src="assets/project-1.png" />
+        <div class="project-card glow-hover">
+          <img src="assets/travelguide.png" />
           <h3>Travel Explorer</h3>
           <p>Live weather, attractions, maps, and images in a clean UI.</p>
           <div class="project-links">
@@ -105,8 +170,8 @@
           </div>
         </div>
 
-        <div class="project-card">
-          <img src="assets/project-2.png" />
+        <div class="project-card glow-hover">
+          <img src="assets/zodiacsite.png" />
           <h3>Age Calculator</h3>
           <p>Simple, clean, user-friendly date and zodiac calculation tool.</p>
           <div class="project-links">
@@ -114,6 +179,39 @@
             <a href="#" class="btn-primary">Live Demo</a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="resume" class="resume-section fade-up">
+      <h2>Résumé</h2>
+      <p class="resume-text">
+        You can view or download my latest résumé using the button below!
+      </p>
+      <a href="assets/bbtechresume25.pdf" class="btn-primary resume-download"
+        >Download Résumé</a
+      >
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="contact" class="contact-section fade-up">
+      <h2>Contact Me</h2>
+      <p class="contact-text">
+        Feel free to reach out for opportunities, collaborations, or questions.
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:briannab1997@gmail.com" class="btn-primary">Email Me</a>
+        <a
+          href="https://www.linkedin.com/in/brianna-brockington-1b6a59a9/"
+          class="btn-secondary"
+          >LinkedIn</a
+        >
+        <a href="https://github.com/briannab1997" class="btn-secondary"
+          >GitHub</a
+        >
       </div>
     </section>
 
