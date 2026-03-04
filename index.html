@@ -3,56 +3,145 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brianna Brockington</title>
+    <meta
+      name="description"
+      content="Brianna Brockington – QA Analyst, Software Engineering Student, and AWS Certified Cloud Practitioner. Portfolio featuring QA projects, mobile apps, and web development work."
+    />
+    <meta name="author" content="Brianna Brockington" />
+    <title>Brianna Brockington | QA Analyst &amp; Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Devicons (tech logos) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
 
   <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress-bar"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top" title="Back to top">
+      &#8679;
+    </button>
+
     <canvas id="sparkle-canvas"></canvas>
 
     <nav>
       <div class="logo">Brianna Brockington</div>
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certs</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#resume">Résumé</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button id="theme-toggle" class="theme-toggle">🌙</button>
+      <div class="nav-right">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <button id="hamburger" class="hamburger" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
 
+    <!-- HERO -->
     <section class="hero fade-up">
       <div class="hero-left">
-        <h1 class="glow-hover">Hello, I’m<br />Brianna</h1>
-        <h2>QA Analyst</h2>
+        <h1 class="glow-hover">Hello, I'm<br />Brianna</h1>
+        <h2>QA Analyst<span class="cursor">|</span></h2>
         <p>I build elegant, modern, intuitive digital experiences.</p>
 
         <div class="hero-buttons">
-          <a href="assets/bbtechresume25.pdf" class="btn-primary glow-hover"
+          <a
+            href="assets/bbrockington_resume.pdf"
+            class="btn-primary glow-hover"
+            download
             >Download CV</a
           >
           <a href="#contact" class="btn-secondary glow-hover">Contact Me</a>
         </div>
 
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/brianna-brockington-1b6a59a9/">
-            <img src="assets/linkedin.png" />
+          <a
+            href="https://www.linkedin.com/in/brianna-brockington-1b6a59a9/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn Profile"
+          >
+            <img src="assets/linkedin.png" alt="LinkedIn" />
           </a>
-          <a href="https://github.com/briannab1997">
-            <img src="assets/github.png" />
+          <a
+            href="https://github.com/briannab1997"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Profile"
+          >
+            <img src="assets/github.png" alt="GitHub" />
           </a>
         </div>
       </div>
 
       <div class="hero-right fade-up">
-        <img src="assets/profile-pic.jpg" class="profile-img glow-hover" />
+        <img
+          src="assets/profile-pic.jpg"
+          class="profile-img glow-hover"
+          alt="Brianna Brockington"
+        />
+      </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section class="stats-section fade-up">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="5">0</span
+            ><span class="stat-suffix">+</span>
+          </div>
+          <p class="stat-label">Projects Built</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="15">0</span
+            ><span class="stat-suffix">+</span>
+          </div>
+          <p class="stat-label">Technologies</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="3">0</span>
+          </div>
+          <p class="stat-label">Certifications Earned</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="7">0</span
+            ><span class="stat-suffix">+</span>
+          </div>
+          <p class="stat-label">Years Industry Experience</p>
+        </div>
       </div>
     </section>
 
     <div class="divider"></div>
 
+    <!-- ABOUT -->
     <section id="about" class="about-section fade-up">
       <h2>About Me</h2>
 
@@ -67,7 +156,7 @@
 
         <div class="about-text">
           <p>
-            I’m Brianna — a Software Engineering student and QA Analyst
+            I'm Brianna — a Software Engineering student and QA Analyst
             passionate about creating clean, intuitive, dependable digital
             experiences. I love building things that feel thoughtful and
             polished — and breaking things just enough to make them stronger.
@@ -89,7 +178,7 @@
           </p>
 
           <p>
-            I’m growing toward roles in QA, IT, and software engineering, with
+            I'm growing toward roles in QA, IT, and software engineering, with
             long-term goals in automation, cloud engineering, and building
             digital experiences that feel meaningful and impactful.
           </p>
@@ -99,46 +188,326 @@
 
     <div class="divider"></div>
 
-    <section id="skills" class="skills-section fade-up">
-      <h2>Skills</h2>
-      <p class="skills-text">
-        Manual QA • Test Case Writing • Bug Reporting • Exploratory Testing •
-        Regression Testing • UI/UX Evaluation • SQL Queries • API Testing •
-        Agile • SDLC • STLC • Java • Python • JavaScript • C# • HTML/CSS •
-        Git/GitHub • POST / GET API Validation • Automation Foundations • AWS
-        Cloud Practitioner Knowledge • Responsive Design • Problem Solving •
-        Attention to Detail • Documentation • Communication
-      </p>
+    <!-- EXPERIENCE TIMELINE -->
+    <section id="experience" class="experience-section fade-up">
+      <h2>Experience</h2>
+      <div class="timeline">
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-icon">💊</div>
+          <div class="timeline-content">
+            <span class="timeline-date">Dec 2025 – Present</span>
+            <h3>Certified Pharmacy Technician</h3>
+            <p class="timeline-company">CenterWell Pharmacy</p>
+            <p>
+              Support high-volume pharmacy operations while maintaining strict
+              data accuracy and compliance standards. Act as liaison between
+              pharmacy operations and IT support teams by documenting system
+              defects and workflow issues for resolution.
+            </p>
+            <div class="timeline-tags">
+              <span>IT Liaison</span>
+              <span>Defect Documentation</span>
+              <span>Data Accuracy</span>
+              <span>Compliance</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-icon">🎓</div>
+          <div class="timeline-content">
+            <span class="timeline-date">Expected April 2026</span>
+            <h3>B.S. Software Engineering</h3>
+            <p class="timeline-company">Western Governors University</p>
+            <p>
+              Pursuing a Bachelor's degree with a focus on data structures,
+              algorithms, backend development, and enterprise software systems.
+              Applying software engineering principles to real-world projects.
+            </p>
+            <div class="timeline-tags">
+              <span>Java</span>
+              <span>Python</span>
+              <span>C#</span>
+              <span>Data Structures</span>
+              <span>Algorithms</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-icon">🏥</div>
+          <div class="timeline-content">
+            <span class="timeline-date">Feb 2024 – Dec 2025</span>
+            <h3>Senior Pharmacy Care Coordinator</h3>
+            <p class="timeline-company">Centene</p>
+            <p>
+              Coordinated complex authorization workflows across regulated
+              enterprise systems. Produced system documentation and collaborated
+              cross-functionally to identify and resolve workflow inefficiencies,
+              driving process improvements and audit readiness.
+            </p>
+            <div class="timeline-tags">
+              <span>Enterprise Systems</span>
+              <span>Documentation</span>
+              <span>Cross-functional</span>
+              <span>Process Improvement</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-icon">🔍</div>
+          <div class="timeline-content">
+            <span class="timeline-date">May 2019 – Feb 2024</span>
+            <h3>Pharmacy Care Coordinator</h3>
+            <p class="timeline-company">OptumRx</p>
+            <p>
+              Investigated issues within internal pharmacy applications including
+              data inconsistencies and permission errors. Supported internal
+              users by diagnosing application errors and system integration
+              issues — directly mirroring QA triage and defect management
+              workflows.
+            </p>
+            <div class="timeline-tags">
+              <span>Bug Triage</span>
+              <span>Application Testing</span>
+              <span>System Analysis</span>
+              <span>Defect Management</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <div class="divider"></div>
 
+    <!-- SKILLS - REDESIGNED -->
+    <section id="skills" class="skills-section fade-up">
+      <h2>Skills</h2>
+
+      <div class="skills-categories">
+
+        <div class="skill-category fade-up">
+          <div class="skill-category-icon">🔍</div>
+          <h3>QA &amp; Testing</h3>
+          <div class="skill-tags">
+            <span>Manual QA</span>
+            <span>Test Case Writing</span>
+            <span>Bug Reporting</span>
+            <span>Exploratory Testing</span>
+            <span>Regression Testing</span>
+            <span>UI/UX Evaluation</span>
+            <span>API Testing</span>
+            <span>Agile / SDLC</span>
+            <span>STLC</span>
+            <span>CI/CD Fundamentals</span>
+            <span>Chrome DevTools</span>
+          </div>
+        </div>
+
+        <div class="skill-category fade-up">
+          <div class="skill-category-icon">💻</div>
+          <h3>Programming</h3>
+          <div class="skill-tech-icons">
+            <div class="tech-icon-item">
+              <i class="devicon-java-plain colored"></i>
+              <span>Java</span>
+            </div>
+            <div class="tech-icon-item">
+              <i class="devicon-python-plain colored"></i>
+              <span>Python</span>
+            </div>
+            <div class="tech-icon-item">
+              <i class="devicon-javascript-plain colored"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="tech-icon-item">
+              <i class="devicon-csharp-plain colored"></i>
+              <span>C#</span>
+            </div>
+            <div class="tech-icon-item">
+              <i class="devicon-cplusplus-plain colored"></i>
+              <span>C++</span>
+            </div>
+            <div class="tech-icon-item">
+              <i class="devicon-html5-plain colored"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="tech-icon-item">
+              <i class="devicon-css3-plain colored"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="tech-icon-item">
+              <i class="devicon-kotlin-plain colored"></i>
+              <span>Kotlin</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category fade-up">
+          <div class="skill-category-icon">🛠️</div>
+          <h3>Tools &amp; Cloud</h3>
+          <div class="skill-tech-icons">
+            <div class="tech-icon-item">
+              <i class="devicon-git-plain colored"></i>
+              <span>Git</span>
+            </div>
+            <div class="tech-icon-item">
+              <i class="devicon-github-original"></i>
+              <span>GitHub</span>
+            </div>
+            <div class="tech-icon-item">
+              <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+              <span>AWS</span>
+            </div>
+            <div class="tech-icon-item">
+              <i class="devicon-docker-plain colored"></i>
+              <span>Docker</span>
+            </div>
+            <div class="tech-icon-item">
+              <i class="devicon-jira-plain colored"></i>
+              <span>Jira</span>
+            </div>
+            <div class="tech-icon-item">
+              <i class="devicon-mysql-plain colored"></i>
+              <span>SQL</span>
+            </div>
+            <div class="tech-icon-item">
+              <i class="devicon-postman-plain colored"></i>
+              <span>Postman</span>
+            </div>
+            <div class="tech-icon-item">
+              <i class="devicon-android-plain colored"></i>
+              <span>Android</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category fade-up">
+          <div class="skill-category-icon">🤝</div>
+          <h3>Professional</h3>
+          <div class="skill-tags">
+            <span>Problem Solving</span>
+            <span>Documentation</span>
+            <span>Communication</span>
+            <span>Attention to Detail</span>
+            <span>Pattern Recognition</span>
+            <span>Responsive Design</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="certifications-section fade-up">
+      <h2>Certifications</h2>
+      <p class="cert-subtitle">Industry-recognized credentials that validate my technical expertise.</p>
+
+      <div class="cert-grid">
+
+        <div class="cert-card fade-up">
+          <div class="cert-badge cert-aws">☁️</div>
+          <div class="cert-info">
+            <span class="cert-status earned">✔ Earned</span>
+            <h3>AWS Certified Cloud Practitioner</h3>
+            <p class="cert-issuer">Amazon Web Services</p>
+            <p class="cert-desc">
+              Validates foundational knowledge of AWS Cloud services,
+              infrastructure, security, compliance, and billing.
+            </p>
+          </div>
+        </div>
+
+        <div class="cert-card fade-up">
+          <div class="cert-badge cert-comptia">🌐</div>
+          <div class="cert-info">
+            <span class="cert-status earned">✔ Earned</span>
+            <h3>CompTIA Network+</h3>
+            <p class="cert-issuer">CompTIA</p>
+            <p class="cert-desc">
+              Demonstrates core networking skills including infrastructure,
+              troubleshooting, security concepts, and network protocols.
+            </p>
+          </div>
+        </div>
+
+        <div class="cert-card fade-up">
+          <div class="cert-badge cert-itil">📋</div>
+          <div class="cert-info">
+            <span class="cert-status earned">✔ Earned</span>
+            <h3>ITIL Foundation Certificate</h3>
+            <p class="cert-issuer">AXELOS / IT Service Management</p>
+            <p class="cert-desc">
+              Covers IT service management best practices, the service lifecycle,
+              and key ITSM concepts used in enterprise environments.
+            </p>
+          </div>
+        </div>
+
+        <div class="cert-card fade-up">
+          <div class="cert-badge cert-google">🔧</div>
+          <div class="cert-info">
+            <span class="cert-status in-progress">⏳ In Progress</span>
+            <h3>Google IT Support Professional</h3>
+            <p class="cert-issuer">Google / Coursera</p>
+            <p class="cert-desc">
+              Comprehensive IT support training covering networking,
+              troubleshooting, system administration, and security fundamentals.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PROJECTS -->
     <section id="projects" class="projects fade-up">
       <h2>Featured Projects</h2>
 
       <div class="project-grid">
+
         <div class="project-card glow-hover">
-          <img src="assets/taskflow.png" />
+          <img src="assets/taskflow.png" alt="TaskFlow Android App screenshot" />
           <h3>TaskFlow (Android)</h3>
+          <div class="project-tech-tags">
+            <span>Kotlin</span>
+            <span>XML</span>
+            <span>Android Studio</span>
+          </div>
           <p>
-            Native Android task management app built with Kotlin and XML.
-            Features dynamic task creation, RecyclerView rendering, and
-            long-press deletion, developed and tested using Android Studio.
+            Native Android task management app with dynamic task creation,
+            RecyclerView rendering, and long-press deletion.
           </p>
           <div class="project-links">
             <a
               href="https://github.com/briannab1997/TaskFlow-Android"
               class="btn-secondary"
               target="_blank"
+              rel="noopener noreferrer"
               >GitHub</a
             >
           </div>
         </div>
 
-        <!-- PROJECT 1 -->
         <div class="project-card glow-hover">
-          <img src="assets/qaportscreenshot.png" />
+          <img
+            src="assets/qaportscreenshot.png"
+            alt="Quality Assurance Portfolio screenshot"
+          />
           <h3>Quality Assurance Portfolio</h3>
+          <div class="project-tech-tags">
+            <span>Manual Testing</span>
+            <span>Postman</span>
+            <span>SQL</span>
+            <span>API Testing</span>
+          </div>
           <p>
             A comprehensive QA portfolio featuring mobile testing, UI/UX
             analysis, exploratory testing, bug reports, and an API automation
@@ -149,21 +518,28 @@
               href="https://github.com/briannab1997/qa-portfolio"
               class="btn-secondary"
               target="_blank"
+              rel="noopener noreferrer"
               >GitHub</a
             >
             <a
               href="https://briannab1997.github.io/qa-portfolio/"
               class="btn-primary"
               target="_blank"
+              rel="noopener noreferrer"
               >Live Demo</a
             >
           </div>
         </div>
 
-        <!-- PROJECT 2 -->
         <div class="project-card glow-hover">
-          <img src="assets/blossomscreenshot.png" />
+          <img src="assets/blossomscreenshot.png" alt="BlossomAI screenshot" />
           <h3>BlossomAI</h3>
+          <div class="project-tech-tags">
+            <span>JavaScript</span>
+            <span>Node.js</span>
+            <span>OpenAI API</span>
+            <span>HTML/CSS</span>
+          </div>
           <p>
             Personalized AI companion with emotional intelligence, name
             recognition, and customized tones.
@@ -173,75 +549,94 @@
               href="https://github.com/briannab1997/bb-blossom-ai"
               class="btn-secondary"
               target="_blank"
+              rel="noopener noreferrer"
               >GitHub</a
             >
             <a
               href="https://briannab1997.github.io/bb-blossom-ai/"
               class="btn-primary"
               target="_blank"
+              rel="noopener noreferrer"
               >Live Demo</a
             >
           </div>
         </div>
 
-        <!-- PROJECT 3 -->
         <div class="project-card glow-hover">
-          <img src="assets/travelguide.png" />
+          <img src="assets/travelguide.png" alt="Travel Explorer screenshot" />
           <h3>Travel Explorer</h3>
+          <div class="project-tech-tags">
+            <span>JavaScript</span>
+            <span>HTML/CSS</span>
+            <span>REST APIs</span>
+          </div>
           <p>Live weather, attractions, maps, and images in a clean UI.</p>
           <div class="project-links">
             <a
               href="https://github.com/briannab1997/BBtravel-explorer"
               class="btn-secondary"
               target="_blank"
+              rel="noopener noreferrer"
               >GitHub</a
             >
             <a
               href="https://briannab1997.github.io/BBtravel-explorer/"
               class="btn-primary"
               target="_blank"
+              rel="noopener noreferrer"
               >Live Demo</a
             >
           </div>
         </div>
 
-        <!-- PROJECT 4 -->
         <div class="project-card glow-hover">
-          <img src="assets/zodiacsite.png" />
+          <img src="assets/zodiacsite.png" alt="Age Calculator screenshot" />
           <h3>Age Calculator</h3>
+          <div class="project-tech-tags">
+            <span>JavaScript</span>
+            <span>HTML/CSS</span>
+          </div>
           <p>Simple, clean, user-friendly date and zodiac calculation tool.</p>
           <div class="project-links">
             <a
               href="https://github.com/briannab1997/agecalculator"
               class="btn-secondary"
               target="_blank"
+              rel="noopener noreferrer"
               >GitHub</a
             >
             <a
               href="https://briannab1997.github.io/agecalculator/"
               class="btn-primary"
               target="_blank"
+              rel="noopener noreferrer"
               >Live Demo</a
             >
           </div>
         </div>
+
       </div>
     </section>
 
     <div class="divider"></div>
 
+    <!-- RESUME -->
     <section id="resume" class="resume-section fade-up">
       <h2>Résumé</h2>
       <p class="resume-text">
-        You can view or download my latest résumé using the button below!
+        View or download my latest résumé using the button below.
       </p>
-      <a href="assets/bbtechresume2026.pdf" class="btn-primary resume-download"
+      <a
+        href="assets/bbrockington_resume.pdf"
+        class="btn-primary resume-download"
+        download
         >Download Résumé</a
       >
     </section>
 
     <div class="divider"></div>
 
+    <!-- CONTACT -->
     <section id="contact" class="contact-section fade-up">
       <h2>Contact Me</h2>
       <p class="contact-text">
@@ -253,13 +648,24 @@
         <a
           href="https://www.linkedin.com/in/brianna-brockington-1b6a59a9/"
           class="btn-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
           >LinkedIn</a
         >
-        <a href="https://github.com/briannab1997" class="btn-secondary"
+        <a
+          href="https://github.com/briannab1997"
+          class="btn-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
           >GitHub</a
         >
       </div>
     </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <p>&copy; 2026 Brianna Brockington &mdash; Built with passion ✨</p>
+    </footer>
 
     <script src="script.js"></script>
   </body>
