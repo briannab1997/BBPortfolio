@@ -1,225 +1,202 @@
-/* ============================================================
-   THEME TOGGLE
-   ============================================================ */
-const themeBtn = document.querySelector("#theme-toggle");
-const body = document.body;
-const savedTheme = localStorage.getItem("theme");
-
-if (savedTheme === "dark") {
-  body.classList.add("dark");
-  themeBtn.textContent = "☀️";
+/* MOBILE MENU */
+function toggleMenu() {
+  const links = document.querySelector(".nav-links");
+  links.classList.toggle("open");
 }
 
-themeBtn.addEventListener("click", () => {
-  body.classList.toggle("dark");
-  const isDark = body.classList.contains("dark");
-  localStorage.setItem("theme", isDark ? "dark" : "light");
-  themeBtn.textContent = isDark ? "☀️" : "🌙";
-});
-
-/* ============================================================
-   HAMBURGER MENU
-   ============================================================ */
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
-
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("open");
-  navLinks.classList.toggle("open");
-});
-
-// Close mobile nav when a link is clicked
-navLinks.querySelectorAll("a").forEach((link) => {
+// Close mobile menu when a nav link is clicked
+document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", () => {
-    hamburger.classList.remove("open");
-    navLinks.classList.remove("open");
+    document.querySelector(".nav-links").classList.remove("open");
   });
 });
 
-/* ============================================================
-   ROTATING JOB TITLES
-   ============================================================ */
-const rotatingWords = [
-  "QA Analyst",
-  "Software Engineering Student",
-  "Full Stack Developer",
-  "Certified AWS Cloud Practitioner",
-  "Automation Engineer",
-  "Problem Solver",
-  "System Thinker",
-  "Innovator",
-  "IT Analyst",
-];
+/* DARK MODE */
+const toggle = document.getElementById("themeToggle");
+const body = document.body;
 
-let wordIndex = 0;
-const subtitle = document.querySelector(".hero-left h2");
-
-function rotateTitle() {
-  subtitle.style.opacity = 0;
-  setTimeout(() => {
-    wordIndex = (wordIndex + 1) % rotatingWords.length;
-    // Preserve the cursor span
-    subtitle.childNodes[0].textContent = rotatingWords[wordIndex];
-    subtitle.style.opacity = 1;
-  }, 300);
+function applyDarkMode(isDark) {
+  body.classList.toggle("dark", isDark);
+  toggle.textContent = isDark ? "☀️" : "🌙";
 }
 
-setInterval(rotateTitle, 2800);
+applyDarkMode(localStorage.getItem("darkMode") === "true");
 
-/* ============================================================
-   SCROLL: PROGRESS BAR + BACK-TO-TOP + SCROLL SPY + PARALLAX
-   ============================================================ */
-const scrollBar = document.getElementById("scroll-progress-bar");
-const backToTopBtn = document.getElementById("back-to-top");
-const hero = document.querySelector(".hero");
+toggle.addEventListener("click", () => {
+  const isDark = body.classList.contains("dark");
+  applyDarkMode(!isDark);
+  localStorage.setItem("darkMode", !isDark);
+});
 
-function updateScrollUI() {
+/* SCROLL PROGRESS BAR + NAV SHADOW */
+const scrollBar = document.getElementById("scrollBar");
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
-  const docHeight =
-    document.documentElement.scrollHeight - window.innerHeight;
-
-  // Progress bar
-  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-  scrollBar.style.width = progress + "%";
-
-  // Back-to-top visibility
-  if (scrollTop > 400) {
-    backToTopBtn.classList.add("visible");
-  } else {
-    backToTopBtn.classList.remove("visible");
-  }
-
-  // Parallax hero
-  hero.style.transform = `translateY(${scrollTop * 0.12}px)`;
-
-  // Scroll spy
-  updateActiveNav(scrollTop);
-}
-
-window.addEventListener("scroll", updateScrollUI, { passive: true });
-
-/* ============================================================
-   SCROLL SPY - highlight active section in nav
-   ============================================================ */
-function updateActiveNav(scrollTop) {
-  const sections = document.querySelectorAll("section[id]");
-  const links = document.querySelectorAll(".nav-links a");
-  let current = "";
-
-  sections.forEach((section) => {
-    if (scrollTop >= section.offsetTop - 120) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  links.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
-  });
-}
-
-/* ============================================================
-   BACK TO TOP
-   ============================================================ */
-backToTopBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const scrolled = (scrollTop / docHeight) * 100;
+  scrollBar.style.width = scrolled + "%";
+  navbar.classList.toggle("scrolled", scrollTop > 60);
 });
 
-/* ============================================================
-   SCROLL ANIMATIONS (fade-up)
-   ============================================================ */
-const observer = new IntersectionObserver(
+/* SCROLL REVEAL */
+const reveals = document.querySelectorAll(".reveal");
+
+// Stagger delays for sibling cards
+document.querySelectorAll(".project-card, .cert-card, .stat-item").forEach((el, i) => {
+  const siblings = el.parentElement.children;
+  const index = Array.from(siblings).indexOf(el);
+  el.style.setProperty("--stagger", (index * 0.08) + "s");
+});
+
+const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) entry.target.classList.add("visible");
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
     });
   },
   { threshold: 0.1 }
 );
 
-document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+reveals.forEach((el) => revealObserver.observe(el));
 
-/* ============================================================
-   ANIMATED STAT COUNTERS
-   ============================================================ */
-let countersStarted = false;
+/* TYPING ANIMATION */
+const typedEl = document.getElementById("typedText");
+const phrases = [
+  "QA Analyst",
+  "Software Engineer",
+  "SWE Intern",
+  "AWS Certified",
+  "Detail-Driven Tester",
+];
 
-const statsObserver = new IntersectionObserver(
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingDelay = 100;
+
+function typeLoop() {
+  const current = phrases[phraseIndex];
+
+  if (isDeleting) {
+    typedEl.textContent = current.substring(0, charIndex - 1);
+    charIndex--;
+    typingDelay = 55;
+  } else {
+    typedEl.textContent = current.substring(0, charIndex + 1);
+    charIndex++;
+    typingDelay = 100;
+  }
+
+  if (!isDeleting && charIndex === current.length) {
+    isDeleting = true;
+    typingDelay = 1800;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    typingDelay = 380;
+  }
+
+  setTimeout(typeLoop, typingDelay);
+}
+
+setTimeout(typeLoop, 900);
+
+/* STAT COUNTER ANIMATION */
+const statNumbers = document.querySelectorAll(".stat-number");
+
+const statObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting && !countersStarted) {
-        countersStarted = true;
-        document.querySelectorAll(".stat-number").forEach((el) => {
-          const target = parseInt(el.getAttribute("data-target"), 10);
-          let current = 0;
-          const duration = 1200; // ms
-          const steps = 40;
-          const increment = target / steps;
-          const interval = duration / steps;
+      if (entry.isIntersecting) {
+        const target = parseInt(entry.target.dataset.target);
+        animateCount(entry.target, target);
+        statObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
 
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              current = target;
-              clearInterval(timer);
-            }
-            el.textContent = Math.floor(current);
-          }, interval);
+statNumbers.forEach((el) => statObserver.observe(el));
+
+function animateCount(el, target) {
+  let count = 0;
+  const duration = 1200;
+  const steps = 50;
+  const stepTime = duration / steps;
+  const increment = target / steps;
+
+  const timer = setInterval(() => {
+    count += increment;
+    if (count >= target) {
+      count = target;
+      clearInterval(timer);
+    }
+    el.textContent = Math.floor(count);
+  }, stepTime);
+}
+
+/* PROJECT FILTER */
+const filterBtns = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    filterBtns.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+    let visibleIndex = 0;
+
+    projectCards.forEach((card) => {
+      const match = filter === "all" || card.dataset.category === filter;
+      card.style.display = match ? "" : "none";
+
+      if (match) {
+        card.style.setProperty("--stagger", (visibleIndex * 0.07) + "s");
+        card.classList.remove("visible");
+        // Re-trigger reveal animation
+        setTimeout(() => card.classList.add("visible"), 20);
+        visibleIndex++;
+      }
+    });
+  });
+});
+
+/* ACTIVE NAV LINK ON SCROLL */
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        navLinks.forEach((link) => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + entry.target.id
+          );
         });
       }
     });
   },
-  { threshold: 0.4 }
+  { threshold: 0.35, rootMargin: "-80px 0px 0px 0px" }
 );
 
-const statsSection = document.querySelector(".stats-section");
-if (statsSection) statsObserver.observe(statsSection);
+sections.forEach((s) => sectionObserver.observe(s));
 
-/* ============================================================
-   SPARKLE BACKGROUND
-   ============================================================ */
-const sparkleCanvas = document.getElementById("sparkle-canvas");
-const ctx = sparkleCanvas.getContext("2d");
+/* BACK TO TOP */
+const backToTopBtn = document.getElementById("backToTop");
 
-function resizeCanvas() {
-  sparkleCanvas.width = window.innerWidth;
-  sparkleCanvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
+window.addEventListener("scroll", () => {
+  backToTopBtn.classList.toggle("visible", window.scrollY > 400);
+}, { passive: true });
 
-let sparkles = [];
-
-function createSparkles() {
-  sparkles = [];
-  for (let i = 0; i < 80; i++) {
-    sparkles.push({
-      x: Math.random() * sparkleCanvas.width,
-      y: Math.random() * sparkleCanvas.height,
-      r: Math.random() * 2 + 1,
-      a: Math.random() * 0.8 + 0.3,
-      drift: Math.random() * 0.4 + 0.2,
-    });
-  }
-}
-createSparkles();
-
-function animateSparkles() {
-  ctx.clearRect(0, 0, sparkleCanvas.width, sparkleCanvas.height);
-
-  sparkles.forEach((s) => {
-    ctx.beginPath();
-    ctx.fillStyle = `rgba(215,135,163,${s.a})`;
-    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-    ctx.fill();
-
-    s.y -= s.drift;
-    if (s.y < 0) s.y = sparkleCanvas.height;
-  });
-
-  requestAnimationFrame(animateSparkles);
-}
-
-animateSparkles();
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});

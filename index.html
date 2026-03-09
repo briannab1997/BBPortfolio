@@ -1,16 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Brianna Brockington – QA Analyst, Software Engineering Student, and AWS Certified Cloud Practitioner. Portfolio featuring QA projects, mobile apps, and web development work."
-    />
-    <meta name="author" content="Brianna Brockington" />
-    <title>Brianna Brockington | QA Analyst &amp; Developer</title>
+    <title>Brianna Brockington — QA &amp; Software Engineering Portfolio</title>
+    <meta name="description" content="Portfolio of Brianna Brockington — QA Analyst and Software Engineer. AWS Certified, CompTIA Network+. Open to QA Analyst, SWE Intern, and new grad roles." />
+    <meta name="keywords" content="QA Analyst, Software Engineer, QA Testing, React, JavaScript, AWS, Kotlin, Android, Portfolio" />
+    <meta property="og:title" content="Brianna Brockington — QA & Software Engineering Portfolio" />
+    <meta property="og:description" content="QA Analyst and Software Engineer. AWS Certified. Open to QA, SWE Intern, and new grad roles. Based in Greer, SC." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Brianna Brockington — Portfolio" />
+    <meta name="twitter:description" content="QA Analyst and Software Engineer. AWS Certified. Open to new roles." />
 
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,661 +21,619 @@
       rel="stylesheet"
     />
 
-    <!-- Devicons (tech logos) -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-    />
-
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <!-- Scroll Progress Bar -->
-    <div id="scroll-progress-bar"></div>
+    <div id="scrollBar"></div>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" aria-label="Back to top" title="Back to top">
-      &#8679;
-    </button>
+    <!-- NAV -->
+    <nav class="navbar">
+      <div class="logo">Brianna<span class="accent">B.</span></div>
 
-    <canvas id="sparkle-canvas"></canvas>
-
-    <nav>
-      <div class="logo">Brianna Brockington</div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
+      <ul class="nav-links">
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#certifications">Certs</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume">Résumé</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="nav-right">
-        <button
-          id="theme-toggle"
-          class="theme-toggle"
-          aria-label="Toggle theme"
-        >
-          🌙
-        </button>
-        <button
-          id="hamburger"
-          class="hamburger"
-          aria-label="Toggle navigation menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+
+      <div class="nav-actions">
+        <a href="./assets/Brianna_Brockington_Resume.pdf" class="btn-resume" download>Resume</a>
+        <button id="themeToggle" class="theme-btn">🌙</button>
       </div>
+
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
 
     <!-- HERO -->
-    <section class="hero fade-up">
-      <div class="hero-left">
-        <h1 class="glow-hover">Hello, I'm<br />Brianna</h1>
-        <h2>QA Analyst<span class="cursor">|</span></h2>
-        <p>I build elegant, modern, intuitive digital experiences.</p>
-
-        <div class="hero-buttons">
-          <a
-            href="assets/bbrockington_resume.pdf"
-            class="btn-primary glow-hover"
-            download
-            >Download CV</a
-          >
-          <a href="#contact" class="btn-secondary glow-hover">Contact Me</a>
-        </div>
-
-        <div class="social-icons">
-          <a
-            href="https://www.linkedin.com/in/brianna-brockington-1b6a59a9/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn Profile"
-          >
-            <img src="assets/linkedin.png" alt="LinkedIn" />
-          </a>
-          <a
-            href="https://github.com/briannab1997"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub Profile"
-          >
-            <img src="assets/github.png" alt="GitHub" />
-          </a>
-        </div>
+    <section id="hero">
+      <div class="hero-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
       </div>
-
-      <div class="hero-right fade-up">
-        <img
-          src="assets/profile-pic.jpg"
-          class="profile-img glow-hover"
-          alt="Brianna Brockington"
-        />
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge reveal">
+            <span class="badge-dot"></span>Open to Work
+          </div>
+          <h1 class="reveal">Hello, I'm <span class="accent">Brianna</span></h1>
+          <p class="hero-subtitle reveal">
+            <span id="typedText"></span><span class="cursor">|</span>
+          </p>
+          <p class="hero-summary reveal">
+            Software engineering student at Western Governors University, 91% complete with a B.S. in
+            Software Engineering. I hold AWS Cloud Practitioner and CompTIA Network+ certifications and
+            am currently working as a Software Engineering Intern at Kentish Publishing Company. My
+            background covers QA testing, API development, and full-stack projects across web and mobile.
+            Open to QA Analyst, SWE Intern, and new grad roles. Based in Greer, SC and willing to relocate.
+          </p>
+          <div class="hero-cta reveal">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="./assets/Brianna_Brockington_Resume.pdf" class="btn secondary" download>Download Resume</a>
+          </div>
+          <div class="hero-skills reveal">
+            <span class="hero-skill-tag">QA Testing</span>
+            <span class="hero-skill-tag">JavaScript</span>
+            <span class="hero-skill-tag">React</span>
+            <span class="hero-skill-tag">API Testing</span>
+            <span class="hero-skill-tag">AWS</span>
+            <span class="hero-skill-tag">Kotlin</span>
+          </div>
+        </div>
+        <div class="hero-photo-wrap reveal">
+          <img
+            src="./assets/profile-pic.jpg"
+            alt="Brianna Brockington"
+            class="hero-img"
+            onerror="this.parentElement.classList.add('photo-placeholder')"
+          />
+        </div>
       </div>
     </section>
 
-    <!-- STATS STRIP -->
-    <section class="stats-section fade-up">
+    <!-- STATS -->
+    <section class="stats-section">
       <div class="stats-grid">
-        <div class="stat-card">
+        <div class="stat-item reveal">
           <div class="stat-number-wrap">
-            <span class="stat-number" data-target="5">0</span
-            ><span class="stat-suffix">+</span>
+            <span class="stat-number" data-target="7">0</span><span class="stat-suffix">+</span>
+          </div>
+          <p class="stat-label">Years Experience</p>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="13">0</span><span class="stat-suffix">+</span>
           </div>
           <p class="stat-label">Projects Built</p>
         </div>
-        <div class="stat-card">
-          <div class="stat-number-wrap">
-            <span class="stat-number" data-target="15">0</span
-            ><span class="stat-suffix">+</span>
-          </div>
-          <p class="stat-label">Technologies</p>
-        </div>
-        <div class="stat-card">
+        <div class="stat-item reveal">
           <div class="stat-number-wrap">
             <span class="stat-number" data-target="3">0</span>
           </div>
-          <p class="stat-label">Certifications Earned</p>
+          <p class="stat-label">Certifications</p>
         </div>
-        <div class="stat-card">
+        <div class="stat-item reveal">
           <div class="stat-number-wrap">
-            <span class="stat-number" data-target="7">0</span
-            ><span class="stat-suffix">+</span>
+            <span class="stat-number" data-target="91">0</span><span class="stat-suffix">%</span>
           </div>
-          <p class="stat-label">Years Industry Experience</p>
+          <p class="stat-label">Degree Complete</p>
         </div>
       </div>
     </section>
 
-    <div class="divider"></div>
-
-    <!-- ABOUT -->
-    <section id="about" class="about-section fade-up">
-      <h2>About Me</h2>
-
-      <div class="about-content">
-        <div class="about-img-wrapper">
-          <img
-            src="assets/about-pic.jpg"
-            class="about-img glow-hover"
-            alt="Brianna portrait"
-          />
-        </div>
-
-        <div class="about-text">
-          <p>
-            I'm Brianna! I am a Software Engineering student and QA Analyst
-            passionate about creating clean, intuitive, dependable digital
-            experiences. I love building things that feel thoughtful and
-            polished, and breaking things just enough to make them stronger.
-          </p>
-
-          <p>
-            I bring hands-on experience in manual QA, UI/UX evaluation,
-            exploratory testing, bug reporting, SQL validation, and API testing
-            with Postman. On the engineering side, I work with Java, Python,
-            JavaScript, C#, and AWS fundamentals, blending creative
-            problem-solving with strong technical depth.
-          </p>
-
-          <p>
-            Before transitioning into tech, I spent six years in healthcare as a
-            certified pharmacy technician — sharpening documentation precision,
-            attention to detail, pattern recognition, and calm problem-solving
-            under pressure.
-          </p>
-
-          <p>
-            I'm growing toward roles in QA, IT, and software engineering, with
-            long-term goals in automation, cloud engineering, and building
-            digital experiences that feel meaningful and impactful.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- EXPERIENCE TIMELINE -->
-    <section id="experience" class="experience-section fade-up">
-      <h2>Experience</h2>
-      <div class="timeline">
-        <div class="timeline-item fade-up">
-          <div class="timeline-icon">💊</div>
-          <div class="timeline-content">
-            <span class="timeline-date">Dec 2025 – Present</span>
-            <h3>Certified Pharmacy Technician</h3>
-            <p class="timeline-company">CenterWell Pharmacy</p>
-            <p>
-              Support high-volume pharmacy operations while maintaining strict
-              data accuracy and compliance standards. Act as liaison between
-              pharmacy operations and IT support teams by documenting system
-              defects and workflow issues for resolution.
-            </p>
-            <div class="timeline-tags">
-              <span>IT Liaison</span>
-              <span>Defect Documentation</span>
-              <span>Data Accuracy</span>
-              <span>Compliance</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item fade-up">
-          <div class="timeline-icon">🎓</div>
-          <div class="timeline-content">
-            <span class="timeline-date">Expected April 2026</span>
-            <h3>B.S. Software Engineering</h3>
-            <p class="timeline-company">Western Governors University</p>
-            <p>
-              Pursuing a Bachelor's degree with a focus on data structures,
-              algorithms, backend development, and enterprise software systems.
-              Applying software engineering principles to real-world projects.
-            </p>
-            <div class="timeline-tags">
-              <span>Java</span>
-              <span>Python</span>
-              <span>C#</span>
-              <span>Data Structures</span>
-              <span>Algorithms</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item fade-up">
-          <div class="timeline-icon">🏥</div>
-          <div class="timeline-content">
-            <span class="timeline-date">Feb 2024 – Dec 2025</span>
-            <h3>Senior Pharmacy Care Coordinator</h3>
-            <p class="timeline-company">Centene</p>
-            <p>
-              Coordinated complex authorization workflows across regulated
-              enterprise systems. Produced system documentation and collaborated
-              cross-functionally to identify and resolve workflow
-              inefficiencies, driving process improvements and audit readiness.
-            </p>
-            <div class="timeline-tags">
-              <span>Enterprise Systems</span>
-              <span>Documentation</span>
-              <span>Cross-functional</span>
-              <span>Process Improvement</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item fade-up">
-          <div class="timeline-icon">🔍</div>
-          <div class="timeline-content">
-            <span class="timeline-date">May 2019 – Feb 2024</span>
-            <h3>Pharmacy Care Coordinator</h3>
-            <p class="timeline-company">OptumRx</p>
-            <p>
-              Investigated issues within internal pharmacy applications
-              including data inconsistencies and permission errors. Supported
-              internal users by diagnosing application errors and system
-              integration issues — directly mirroring QA triage and defect
-              management workflows.
-            </p>
-            <div class="timeline-tags">
-              <span>Bug Triage</span>
-              <span>Application Testing</span>
-              <span>System Analysis</span>
-              <span>Defect Management</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- SKILLS - REDESIGNED -->
-    <section id="skills" class="skills-section fade-up">
-      <h2>Skills</h2>
-
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2 class="section-title reveal">Skills &amp; Tools</h2>
       <div class="skills-categories">
-        <div class="skill-category fade-up">
-          <div class="skill-category-icon">🔍</div>
-          <h3>QA &amp; Testing</h3>
-          <div class="skill-tags">
-            <span>Manual QA</span>
-            <span>Test Case Writing</span>
-            <span>Bug Reporting</span>
-            <span>Exploratory Testing</span>
-            <span>Regression Testing</span>
-            <span>UI/UX Evaluation</span>
-            <span>API Testing</span>
-            <span>Agile / SDLC</span>
-            <span>STLC</span>
-            <span>CI/CD Fundamentals</span>
-            <span>Chrome DevTools</span>
+        <div class="skill-category reveal">
+          <h4 class="category-label">Testing &amp; QA</h4>
+          <div class="skills-grid">
+            <span class="skill-tag">Manual Testing</span>
+            <span class="skill-tag">Exploratory Testing</span>
+            <span class="skill-tag">Regression Testing</span>
+            <span class="skill-tag">Smoke Testing</span>
+            <span class="skill-tag">API Testing</span>
+            <span class="skill-tag">Mobile Testing</span>
+            <span class="skill-tag">Accessibility Testing</span>
+            <span class="skill-tag">UI/UX Analysis</span>
+            <span class="skill-tag">Bug Reporting</span>
+            <span class="skill-tag">Test Case Design</span>
+            <span class="skill-tag">WCAG 2.1 AA</span>
+            <span class="skill-tag">Nielsen's Heuristics</span>
           </div>
         </div>
-
-        <div class="skill-category fade-up">
-          <div class="skill-category-icon">💻</div>
-          <h3>Programming</h3>
-          <div class="skill-tech-icons">
-            <div class="tech-icon-item">
-              <i class="devicon-java-plain colored"></i>
-              <span>Java</span>
-            </div>
-            <div class="tech-icon-item">
-              <i class="devicon-python-plain colored"></i>
-              <span>Python</span>
-            </div>
-            <div class="tech-icon-item">
-              <i class="devicon-javascript-plain colored"></i>
-              <span>JavaScript</span>
-            </div>
-            <div class="tech-icon-item">
-              <i class="devicon-csharp-plain colored"></i>
-              <span>C#</span>
-            </div>
-            <div class="tech-icon-item">
-              <i class="devicon-cplusplus-plain colored"></i>
-              <span>C++</span>
-            </div>
-            <div class="tech-icon-item">
-              <i class="devicon-html5-plain colored"></i>
-              <span>HTML5</span>
-            </div>
-            <div class="tech-icon-item">
-              <i class="devicon-css3-plain colored"></i>
-              <span>CSS3</span>
-            </div>
-            <div class="tech-icon-item">
-              <i class="devicon-kotlin-plain colored"></i>
-              <span>Kotlin</span>
-            </div>
+        <div class="skill-category reveal">
+          <h4 class="category-label">Languages &amp; Frameworks</h4>
+          <div class="skills-grid">
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Kotlin</span>
+            <span class="skill-tag">React 18</span>
+            <span class="skill-tag">React Native</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">C#</span>
           </div>
         </div>
-
-        <div class="skill-category fade-up">
-          <div class="skill-category-icon">🛠️</div>
-          <h3>Tools &amp; Cloud</h3>
-          <div class="skill-tech-icons">
-            <div class="tech-icon-item">
-              <i class="devicon-git-plain colored"></i>
-              <span>Git</span>
-            </div>
-            <div class="tech-icon-item">
-              <i class="devicon-github-original"></i>
-              <span>GitHub</span>
-            </div>
-            <div class="tech-icon-item">
-              <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
-              <span>AWS</span>
-            </div>
-            <div class="tech-icon-item">
-              <i class="devicon-docker-plain colored"></i>
-              <span>Docker</span>
-            </div>
-            <div class="tech-icon-item">
-              <i class="devicon-jira-plain colored"></i>
-              <span>Jira</span>
-            </div>
-            <div class="tech-icon-item">
-              <i class="devicon-mysql-plain colored"></i>
-              <span>SQL</span>
-            </div>
-            <div class="tech-icon-item">
-              <i class="devicon-postman-plain colored"></i>
-              <span>Postman</span>
-            </div>
-            <div class="tech-icon-item">
-              <i class="devicon-android-plain colored"></i>
-              <span>Android</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill-category fade-up">
-          <div class="skill-category-icon">🤝</div>
-          <h3>Professional</h3>
-          <div class="skill-tags">
-            <span>Problem Solving</span>
-            <span>Documentation</span>
-            <span>Communication</span>
-            <span>Attention to Detail</span>
-            <span>Pattern Recognition</span>
-            <span>Responsive Design</span>
+        <div class="skill-category reveal">
+          <h4 class="category-label">Cloud, Tools &amp; Process</h4>
+          <div class="skills-grid">
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Postman</span>
+            <span class="skill-tag">Chrome DevTools</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Vite</span>
+            <span class="skill-tag">Expo</span>
+            <span class="skill-tag">Agile / Scrum</span>
+            <span class="skill-tag">CI/CD</span>
+            <span class="skill-tag">VoiceOver / TalkBack</span>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="divider"></div>
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2 class="section-title reveal">Experience</h2>
+      <div class="experience-list">
 
-    <!-- CERTIFICATIONS -->
-    <section id="certifications" class="certifications-section fade-up">
-      <h2>Certifications</h2>
-      <p class="cert-subtitle">
-        Industry-recognized credentials that validate my technical expertise.
-      </p>
-
-      <div class="cert-grid">
-        <div class="cert-card fade-up">
-          <div class="cert-badge cert-aws">☁️</div>
-          <div class="cert-info">
-            <span class="cert-status earned">✔ Earned</span>
-            <h3>AWS Certified Cloud Practitioner</h3>
-            <p class="cert-issuer">Amazon Web Services</p>
-            <p class="cert-desc">
-              Validates foundational knowledge of AWS Cloud services,
-              infrastructure, security, compliance, and billing.
-            </p>
+        <!-- Internship — featured -->
+        <div class="exp-card featured reveal">
+          <div class="exp-header">
+            <div class="exp-title-group">
+              <h3>Software Engineering Intern</h3>
+              <p class="exp-company">Kentish Publishing Company, Remote</p>
+            </div>
+            <div class="exp-right">
+              <span class="exp-badge current">Current</span>
+              <span class="exp-date">Mar 2026 – Present</span>
+            </div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Build and test AI-driven publishing and content automation tools using modern web technologies and LLM-powered workflows</li>
+            <li>Support backend functionality and system integrations while collaborating with engineering and product teams</li>
+            <li>Debug application behavior, analyze system outputs, and improve reliability and performance of AI-based tools</li>
+            <li>Contribute to prompt engineering, data processing pipelines, and documentation for evolving AI features</li>
+            <li>Participate in agile cycles, testing features and iterating on solutions through hands-on development</li>
+          </ul>
+          <div class="project-tags">
+            <span class="project-tag">AI Tools</span>
+            <span class="project-tag">LLM Workflows</span>
+            <span class="project-tag">Agile</span>
+            <span class="project-tag">Prompt Engineering</span>
+            <span class="project-tag">Backend</span>
           </div>
         </div>
 
-        <div class="cert-card fade-up">
-          <div class="cert-badge cert-comptia">🌐</div>
-          <div class="cert-info">
-            <span class="cert-status earned">✔ Earned</span>
-            <h3>CompTIA Network+</h3>
-            <p class="cert-issuer">CompTIA</p>
-            <p class="cert-desc">
-              Demonstrates core networking skills including infrastructure,
-              troubleshooting, security concepts, and network protocols.
-            </p>
+        <!-- CenterWell — current -->
+        <div class="exp-card reveal">
+          <div class="exp-header">
+            <div class="exp-title-group">
+              <h3>Certified Pharmacy Technician</h3>
+              <p class="exp-company">CenterWell Pharmacy</p>
+            </div>
+            <div class="exp-right">
+              <span class="exp-badge current">Current</span>
+              <span class="exp-date">Dec 2025 – Present</span>
+            </div>
+          </div>
+          <p class="exp-summary">
+            Support high-volume pharmacy operations within enterprise platforms while maintaining strict data accuracy, compliance, and documentation integrity. Bridge pharmacy operations and IT support — documenting system defects, reproducing bugs, and escalating issues with detailed technical context.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Bug Documentation</span>
+            <span class="project-tag">Enterprise Systems</span>
+            <span class="project-tag">Compliance</span>
+            <span class="project-tag">Data Accuracy</span>
           </div>
         </div>
 
-        <div class="cert-card fade-up">
-          <div class="cert-badge cert-itil">📋</div>
-          <div class="cert-info">
-            <span class="cert-status earned">✔ Earned</span>
-            <h3>ITIL Foundation Certificate</h3>
-            <p class="cert-issuer">AXELOS / IT Service Management</p>
-            <p class="cert-desc">
-              Covers IT service management best practices, the service
-              lifecycle, and key ITSM concepts used in enterprise environments.
-            </p>
+        <!-- Prior healthcare roles -->
+        <div class="exp-card reveal">
+          <div class="exp-header">
+            <div class="exp-title-group">
+              <h3>Healthcare Operations and Technology</h3>
+              <p class="exp-company">Centene, OptumRx, Aetna</p>
+            </div>
+            <span class="exp-date">2018 – 2025</span>
+          </div>
+          <p class="exp-summary">
+            7+ years inside compliance-driven enterprise healthcare platforms. Roles involved diagnosing and documenting system defects, reproducing application errors, and collaborating cross-functionally on technical escalations. These experiences overlap directly with QA practices and gave me hands-on exposure to how large-scale systems behave under real-world conditions.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">QA Adjacent</span>
+            <span class="project-tag">Cross-functional</span>
+            <span class="project-tag">Enterprise Systems</span>
+            <span class="project-tag">Root Cause Analysis</span>
           </div>
         </div>
 
-        <div class="cert-card fade-up">
-          <div class="cert-badge cert-google">🔧</div>
-          <div class="cert-info">
-            <span class="cert-status in-progress">⏳ In Progress</span>
-            <h3>Google IT Support Professional</h3>
-            <p class="cert-issuer">Google / Coursera</p>
-            <p class="cert-desc">
-              Comprehensive IT support training covering networking,
-              troubleshooting, system administration, and security fundamentals.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
-
-    <div class="divider"></div>
 
     <!-- PROJECTS -->
-    <section id="projects" class="projects fade-up">
-      <h2>Featured Projects</h2>
+    <section id="projects">
+      <h2 class="section-title reveal">Projects</h2>
+      <div class="project-filter reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="qa">QA Testing</button>
+        <button class="filter-btn" data-filter="dev">Software Dev</button>
+      </div>
 
       <div class="project-grid">
-        <div class="project-card glow-hover">
-          <img
-            src="assets/taskflow.png"
-            alt="TaskFlow Android App screenshot"
-          />
-          <h3>TaskFlow (Android)</h3>
-          <div class="project-tech-tags">
-            <span>Kotlin</span>
-            <span>XML</span>
-            <span>Android Studio</span>
-          </div>
+
+        <!-- QA PROJECTS -->
+        <div class="project-card reveal" data-category="qa">
+          <h3>Mobile App Test Suite</h3>
           <p>
-            Native Android task management app with dynamic task creation,
-            RecyclerView rendering, and long-press deletion.
+            Full mobile QA coverage for the Instagram login flow. Includes structured test cases, bug reports,
+            exploratory session notes, and a device compatibility matrix across iOS and Android.
           </p>
-          <div class="project-links">
-            <a
-              href="https://github.com/briannab1997/TaskFlow-Android"
-              class="btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-              >GitHub</a
-            >
+          <div class="project-tags">
+            <span class="project-tag">Mobile</span>
+            <span class="project-tag">iOS</span>
+            <span class="project-tag">Android</span>
+            <span class="project-tag">Exploratory</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/briannab1997/qa-portfolio/tree/main/mobile-tests" class="btn primary" target="_blank" rel="noopener">View on GitHub</a>
           </div>
         </div>
 
-        <div class="project-card glow-hover">
-          <img
-            src="assets/qaportscreenshot.png"
-            alt="Quality Assurance Portfolio screenshot"
-          />
-          <h3>Quality Assurance Portfolio</h3>
-          <div class="project-tech-tags">
-            <span>Manual Testing</span>
-            <span>Postman</span>
-            <span>SQL</span>
-            <span>API Testing</span>
-          </div>
+        <div class="project-card reveal" data-category="qa">
+          <h3>Airbnb UI/UX and Accessibility Analysis</h3>
           <p>
-            A comprehensive QA portfolio featuring mobile testing, UI/UX
-            analysis, exploratory testing, bug reports, and an API automation
-            suite.
+            Evaluated Airbnb's search and booking flow using Nielsen's 10 Heuristics and WCAG 2.1 AA standards.
+            Produced a full heuristic report, accessibility checklist, and structured usability test cases.
           </p>
-          <div class="project-links">
-            <a
-              href="https://github.com/briannab1997/qa-portfolio"
-              class="btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-              >GitHub</a
-            >
-            <a
-              href="https://briannab1997.github.io/qa-portfolio/"
-              class="btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Live Demo</a
-            >
+          <div class="project-tags">
+            <span class="project-tag">UI/UX</span>
+            <span class="project-tag">Accessibility</span>
+            <span class="project-tag">WCAG 2.1</span>
+            <span class="project-tag">Heuristics</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/briannab1997/qa-portfolio/tree/main/ui-ux" class="btn primary" target="_blank" rel="noopener">View on GitHub</a>
           </div>
         </div>
 
-        <div class="project-card glow-hover">
-          <img src="assets/blossomscreenshot.png" alt="BlossomAI screenshot" />
+        <div class="project-card reveal" data-category="qa">
+          <h3>Users API Automation Suite</h3>
+          <p>
+            Node.js automation suite testing full CRUD operations against the Reqres Users API. Includes a written
+            test plan, test scripts, and a detailed results report covering happy path and failure scenarios.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Automation</span>
+            <span class="project-tag">API</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">CRUD</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/briannab1997/qa-portfolio/tree/main/automation-lite" class="btn primary" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="qa">
+          <h3>Bug Report Collection</h3>
+          <p>
+            Structured bug reports written across three application types: banking, e-commerce, and login.
+            Each report includes reproduction steps, environment details, severity classification, and resolution status.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Bug Reports</span>
+            <span class="project-tag">Banking</span>
+            <span class="project-tag">E-Commerce</span>
+            <span class="project-tag">Security</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/briannab1997/qa-portfolio/tree/main/bug-reports" class="btn primary" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="qa">
+          <h3>Manual Test Case Suites</h3>
+          <p>
+            Detailed test case sets covering happy paths, negative paths, edge cases, and UI/accessibility checks
+            across banking, e-commerce, and login applications.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Test Cases</span>
+            <span class="project-tag">Manual</span>
+            <span class="project-tag">Regression</span>
+            <span class="project-tag">Edge Cases</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/briannab1997/qa-portfolio/tree/main/test-cases" class="btn primary" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="qa">
+          <h3>API Test Documentation</h3>
+          <p>
+            Documented API test scenarios for a banking platform and e-commerce backend. Covers authentication flows,
+            data integrity checks, error handling, and HTTP status code validation.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">API Testing</span>
+            <span class="project-tag">REST</span>
+            <span class="project-tag">Banking</span>
+            <span class="project-tag">E-Commerce</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/briannab1997/qa-portfolio/tree/main/api-tests" class="btn primary" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+
+        <!-- DEV PROJECTS -->
+        <div class="project-card reveal" data-category="dev">
+          <div class="card-preview">
+            <img src="./assets/shopnova.png" alt="ShopNova screenshot" />
+          </div>
+          <h3>ShopNova</h3>
+          <p>
+            Full-stack e-commerce platform built with React 18, TypeScript, and Vite. Features a 3-step checkout flow,
+            cart with persistence, product search, auth, and order history. Extended with a React Native mobile app
+            for iOS and Android.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">React 18</span>
+            <span class="project-tag">TypeScript</span>
+            <span class="project-tag">React Native</span>
+            <span class="project-tag">Vite</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/briannab1997/shopnova" class="btn primary" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://briannab1997.github.io/shopnova/" class="btn secondary" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="dev">
+          <div class="card-preview">
+            <img src="./assets/blossomscreenshot.png" alt="BlossomAI screenshot" />
+          </div>
           <h3>BlossomAI</h3>
-          <div class="project-tech-tags">
-            <span>JavaScript</span>
-            <span>Node.js</span>
-            <span>OpenAI API</span>
-            <span>HTML/CSS</span>
-          </div>
           <p>
-            Personalized AI companion with emotional intelligence, name
-            recognition, and customized tones.
+            Conversational AI companion built with JavaScript and the OpenAI API. Offers four personality modes
+            (Soft, Sassy, Pro, Wise) with topic-based prompts for career, relationships, habits, and more.
+            Deployed on GitHub Pages.
           </p>
-          <div class="project-links">
-            <a
-              href="https://github.com/briannab1997/bb-blossom-ai"
-              class="btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-              >GitHub</a
-            >
-            <a
-              href="https://briannab1997.github.io/bb-blossom-ai/"
-              class="btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Live Demo</a
-            >
+          <div class="project-tags">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">OpenAI API</span>
+            <span class="project-tag">REST APIs</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/briannab1997/bb-blossom-ai" class="btn primary" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://briannab1997.github.io/bb-blossom-ai/" class="btn secondary" target="_blank" rel="noopener">Live Demo</a>
           </div>
         </div>
 
-        <div class="project-card glow-hover">
-          <img src="assets/travelguide.png" alt="Travel Explorer screenshot" />
-          <h3>Travel Explorer</h3>
-          <div class="project-tech-tags">
-            <span>JavaScript</span>
-            <span>HTML/CSS</span>
-            <span>REST APIs</span>
+        <div class="project-card reveal" data-category="dev">
+          <div class="card-preview">
+            <img src="./assets/travelguide.png" alt="Jetset screenshot" />
           </div>
-          <p>Live weather, attractions, maps, and images in a clean UI.</p>
-          <div class="project-links">
-            <a
-              href="https://github.com/briannab1997/BBtravel-explorer"
-              class="btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-              >GitHub</a
-            >
-            <a
-              href="https://briannab1997.github.io/BBtravel-explorer/"
-              class="btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Live Demo</a
-            >
+          <h3>Jetset</h3>
+          <p>
+            Travel discovery app built in vanilla JavaScript with multi-source API integration. Search any city
+            or destination for curated travel info, with a responsive UI, async data fetching, and smooth
+            transitions. No framework dependencies.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">REST APIs</span>
+            <span class="project-tag">Async</span>
+            <span class="project-tag">Responsive</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/briannab1997/BBtravel-explorer" class="btn primary" target="_blank" rel="noopener">View on GitHub</a>
           </div>
         </div>
 
-        <div class="project-card glow-hover">
-          <img src="assets/zodiacsite.png" alt="Age Calculator screenshot" />
-          <h3>Age Calculator</h3>
-          <div class="project-tech-tags">
-            <span>JavaScript</span>
-            <span>HTML/CSS</span>
+        <div class="project-card reveal" data-category="dev">
+          <div class="card-preview dark-preview">
+            <img src="./assets/luminarywelcome.png" alt="Luminary app screenshot" />
           </div>
-          <p>Simple, clean, user-friendly date and zodiac calculation tool.</p>
-          <div class="project-links">
-            <a
-              href="https://github.com/briannab1997/agecalculator"
-              class="btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-              >GitHub</a
-            >
-            <a
-              href="https://briannab1997.github.io/agecalculator/"
-              class="btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Live Demo</a
-            >
+          <h3>Luminary</h3>
+          <p>
+            AI-powered study app with smart flashcards, spaced repetition, AI-powered notes, and an AI tutor chat.
+            Built with a full-stack JavaScript architecture and deployed on GitHub Pages.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Full-Stack</span>
+            <span class="project-tag">AI</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Node.js</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/briannab1997/bb-study-app" class="btn primary" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://briannab1997.github.io/bb-study-app/" class="btn secondary" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="dev">
+          <div class="card-preview">
+            <img src="./assets/taskflow.png" alt="Bloom app screenshot" />
+          </div>
+          <h3>Bloom</h3>
+          <p>
+            Native Android task manager built in Kotlin with MVVM architecture, Room (SQLite), and Material Design 3.
+            Features priority levels, swipe-to-delete with undo, and full data persistence across sessions.
+            Open in Android Studio.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Kotlin</span>
+            <span class="project-tag">Android</span>
+            <span class="project-tag">MVVM</span>
+            <span class="project-tag">Room</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/briannab1997/TaskFlow-Android" class="btn primary" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="dev">
+          <div class="card-preview dark-preview">
+            <img src="./assets/zodiacsite.png" alt="Birthglow screenshot" />
+          </div>
+          <h3>Birthglow</h3>
+          <p>
+            Interactive web app that generates a personalized cosmic profile from a birthdate and city. Returns
+            age breakdown, zodiac sign, birthstone, and a story about the birth location. Dark mode included.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Vanilla JS</span>
+            <span class="project-tag">APIs</span>
+            <span class="project-tag">Dark Mode</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://briannab1997.github.io/agecalculator/" class="btn secondary" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="dev">
+          <div class="card-preview">
+            <img src="./assets/portfolio-screenshot.png" alt="BB Portfolio screenshot" />
+          </div>
+          <h3>BB Portfolio</h3>
+          <p>
+            This site, built from scratch with no frameworks. Vanilla HTML, CSS, and JavaScript only. Dark mode,
+            scroll animations, project filtering, mobile-responsive nav, back-to-top button, and SEO optimizations.
+            A living project I keep improving as I grow.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">GitHub Pages</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/briannab1997/BBPortfolio" class="btn primary" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION + CERTS -->
+    <section id="education">
+      <h2 class="section-title reveal">Education &amp; Certifications</h2>
+
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <div class="edu-logo-wrap">
+            <img
+              src="https://logo.clearbit.com/wgu.edu"
+              alt="WGU"
+              class="edu-logo"
+              onerror="this.parentElement.innerHTML='<div class=&quot;edu-logo-badge&quot;>WGU</div>'"
+            />
+          </div>
+          <div class="edu-details">
+            <h3>B.S. Software Engineering</h3>
+            <p class="edu-school">Western Governors University</p>
+            <span class="edu-date">Expected April 2026</span>
+            <div class="degree-progress-wrap">
+              <div class="progress-track">
+                <div class="progress-fill" style="--progress: 91%"></div>
+              </div>
+              <span class="progress-label">91% Complete</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-card reveal">
+          <div class="edu-logo-wrap">
+            <div class="edu-logo-badge alt">UMA</div>
+          </div>
+          <div class="edu-details">
+            <h3>A.S. Health Sciences</h3>
+            <p class="edu-school">Ultimate Medical Academy</p>
+            <p class="edu-major">Pharmacy Technician Track</p>
+            <span class="edu-date">2017</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="subsection-title reveal">Certifications</h3>
+      <div class="certs-grid">
+        <div class="cert-card reveal">
+          <div class="cert-icon aws">AWS</div>
+          <div class="cert-info">
+            <h4>AWS Certified Cloud Practitioner</h4>
+            <span class="cert-status earned">Earned</span>
+          </div>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-icon comptia">N+</div>
+          <div class="cert-info">
+            <h4>CompTIA Network+</h4>
+            <span class="cert-status earned">Earned</span>
+          </div>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-icon itil">ITIL</div>
+          <div class="cert-info">
+            <h4>ITIL Foundation</h4>
+            <p class="cert-sub">IT Service Management</p>
+            <span class="cert-status earned">Earned</span>
+          </div>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-icon google">G</div>
+          <div class="cert-info">
+            <h4>Google IT Support Professional</h4>
+            <span class="cert-status in-progress">In Progress</span>
           </div>
         </div>
       </div>
     </section>
-
-    <div class="divider"></div>
-
-    <!-- RESUME -->
-    <section id="resume" class="resume-section fade-up">
-      <h2>Résumé</h2>
-      <p class="resume-text">
-        View or download my latest résumé using the button below.
-      </p>
-      <a
-        href="assets/bbrockington_resume.pdf"
-        class="btn-primary resume-download"
-        download
-        >Download Résumé</a
-      >
-    </section>
-
-    <div class="divider"></div>
 
     <!-- CONTACT -->
-    <section id="contact" class="contact-section fade-up">
-      <h2>Contact Me</h2>
-      <p class="contact-text">
-        Feel free to reach out for opportunities, collaborations, or questions.
+    <section id="contact">
+      <h2 class="section-title reveal">Let's Connect</h2>
+      <p class="contact-subtitle reveal">
+        Open to QA Analyst, Software Engineering, and internship roles.
+        Based in Greer, SC and willing to relocate.
       </p>
-
-      <div class="contact-links">
-        <a href="mailto:briannab1997@gmail.com" class="btn-primary">Email Me</a>
-        <a
-          href="https://www.linkedin.com/in/brianna-brockington-1b6a59a9/"
-          class="btn-secondary"
-          target="_blank"
-          rel="noopener noreferrer"
-          >LinkedIn</a
-        >
-        <a
-          href="https://github.com/briannab1997"
-          class="btn-secondary"
-          target="_blank"
-          rel="noopener noreferrer"
-          >GitHub</a
-        >
+      <div class="contact-links reveal">
+        <a href="mailto:briannab1997@gmail.com" class="contact-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          briannab1997@gmail.com
+        </a>
+        <a href="https://linkedin.com/in/brianna-brockington-1b6a59a9" class="contact-link" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/briannab1997" class="contact-link" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          github.com/briannab1997
+        </a>
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <p>&copy; 2026 Brianna Brockington &mdash; Built with passion ✨</p>
+    <footer>
+      <p>© 2026 Brianna Brockington &nbsp;·&nbsp; Built from scratch</p>
     </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
 
     <script src="script.js"></script>
   </body>
