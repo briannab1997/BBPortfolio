@@ -23,6 +23,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   </head>
 
   <body>
@@ -41,7 +43,7 @@
       </ul>
 
       <div class="nav-actions">
-        <a href="./assets/Brianna_Brockington_Resume.pdf" class="btn-resume" download>Resume</a>
+        <a href="./assets/Brianna_Brockington_Resume_General.pdf" class="btn-resume" download>Resume</a>
         <button id="themeToggle" class="theme-btn">🌙</button>
       </div>
 
@@ -67,15 +69,15 @@
             <span id="typedText"></span><span class="cursor">|</span>
           </p>
           <p class="hero-summary reveal">
-            Software engineering student at Western Governors University, 91% complete with a B.S. in
-            Software Engineering. I hold AWS Cloud Practitioner and CompTIA Network+ certifications and
-            am currently working as a Software Engineering Intern at Kentish Publishing Company. My
-            background covers QA testing, API development, and full-stack projects across web and mobile.
-            Open to QA Analyst, SWE Intern, and new grad roles. Based in Greer, SC and willing to relocate.
+            B.S. Software Engineering graduate from Western Governors University (April 2026). I hold AWS
+            Cloud Practitioner, CompTIA Network+, and ITIL Foundation certifications and am currently
+            working as a Software Engineering Intern at Kentish Publishing Company. My background covers
+            QA testing, API development, and full-stack projects across web and mobile.
+            Open to QA Analyst, SWE, and new grad roles. Based in Greer, SC and willing to relocate.
           </p>
           <div class="hero-cta reveal">
             <a href="#projects" class="btn primary">View Projects</a>
-            <a href="./assets/Brianna_Brockington_Resume.pdf" class="btn secondary" download>Download Resume</a>
+            <a href="./assets/Brianna_Brockington_Resume_General.pdf" class="btn secondary" download>Download Resume</a>
           </div>
           <div class="hero-skills reveal">
             <span class="hero-skill-tag">QA Testing</span>
@@ -108,7 +110,7 @@
         </div>
         <div class="stat-item reveal">
           <div class="stat-number-wrap">
-            <span class="stat-number" data-target="13">0</span><span class="stat-suffix">+</span>
+            <span class="stat-number" data-target="14">0</span><span class="stat-suffix">+</span>
           </div>
           <p class="stat-label">Projects Built</p>
         </div>
@@ -120,9 +122,9 @@
         </div>
         <div class="stat-item reveal">
           <div class="stat-number-wrap">
-            <span class="stat-number" data-target="91">0</span><span class="stat-suffix">%</span>
+            <span class="stat-number" data-target="2026">0</span>
           </div>
-          <p class="stat-label">Degree Complete</p>
+          <p class="stat-label">B.S. Graduated</p>
         </div>
       </div>
     </section>
@@ -218,7 +220,7 @@
           </div>
         </div>
 
-        <!-- CenterWell — current -->
+        <!-- CenterWell -->
         <div class="exp-card reveal">
           <div class="exp-header">
             <div class="exp-title-group">
@@ -226,12 +228,11 @@
               <p class="exp-company">CenterWell Pharmacy</p>
             </div>
             <div class="exp-right">
-              <span class="exp-badge current">Current</span>
-              <span class="exp-date">Dec 2025 – Present</span>
+              <span class="exp-date">Dec 2025 – Apr 2026</span>
             </div>
           </div>
           <p class="exp-summary">
-            Support high-volume pharmacy operations within enterprise platforms while maintaining strict data accuracy, compliance, and documentation integrity. Bridge pharmacy operations and IT support — documenting system defects, reproducing bugs, and escalating issues with detailed technical context.
+            Supported high-volume pharmacy operations within enterprise platforms while maintaining strict data accuracy, compliance, and documentation integrity. Bridged pharmacy operations and IT support — documenting system defects, reproducing bugs, and escalating issues with detailed technical context.
           </p>
           <div class="project-tags">
             <span class="project-tag">Bug Documentation</span>
@@ -487,6 +488,28 @@
         </div>
 
         <div class="project-card reveal" data-category="dev">
+          <div class="card-preview">
+            <img src="./assets/meditrack.png" alt="MediTrack app screenshot" />
+          </div>
+          <h3>MediTrack</h3>
+          <p>
+            Android medication management app built in Java. Tracks daily doses, pill supply, and compliance
+            with a dashboard, weekly charts, swipe-to-delete with undo, low-stock warnings, and persistent
+            reminder notifications via WorkManager. Full dark mode support.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Java</span>
+            <span class="project-tag">Android</span>
+            <span class="project-tag">MVVM</span>
+            <span class="project-tag">Room</span>
+            <span class="project-tag">Material Design 3</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/briannab1997/meditrack-android" class="btn primary" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="dev">
           <div class="card-preview dark-preview">
             <img src="./assets/zodiacsite.png" alt="Birthglow screenshot" />
           </div>
@@ -547,12 +570,12 @@
           <div class="edu-details">
             <h3>B.S. Software Engineering</h3>
             <p class="edu-school">Western Governors University</p>
-            <span class="edu-date">Expected April 2026</span>
+            <span class="edu-date">Graduated April 2026 🎓</span>
             <div class="degree-progress-wrap">
               <div class="progress-track">
-                <div class="progress-fill" style="--progress: 91%"></div>
+                <div class="progress-fill" style="--progress: 100%"></div>
               </div>
-              <span class="progress-label">91% Complete</span>
+              <span class="progress-label">100% Complete</span>
             </div>
           </div>
         </div>

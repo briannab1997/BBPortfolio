@@ -200,3 +200,32 @@ window.addEventListener("scroll", () => {
 backToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+/* GRADUATION CONFETTI */
+function launchConfetti() {
+  const duration = 3500;
+  const end = Date.now() + duration;
+  const colors = ["#d787a3", "#f2c9d9", "#ffffff", "#ffe0ef", "#c96b96"];
+
+  (function frame() {
+    confetti({
+      particleCount: 6,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+      colors: colors,
+    });
+    confetti({
+      particleCount: 6,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+      colors: colors,
+    });
+    if (Date.now() < end) requestAnimationFrame(frame);
+  })();
+}
+
+window.addEventListener("load", () => {
+  setTimeout(launchConfetti, 800);
+});
