@@ -305,9 +305,9 @@ body.dark .blob { opacity: 0.08; }
 }
 
 #hero h1 {
-  font-family: "Arial Black", "Arial Bold", var(--display-font);
+  font-family: var(--display-font);
   font-size: clamp(2.15rem, 4.9vw, 3.85rem);
-  font-weight: 900;
+  font-weight: 800;
   line-height: 0.98;
   letter-spacing: 0;
 }
