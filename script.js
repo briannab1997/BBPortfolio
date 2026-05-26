@@ -175,6 +175,7 @@ const featuredDots = document.getElementById("featuredDots");
 const featuredPrev = document.getElementById("featuredPrev");
 const featuredNext = document.getElementById("featuredNext");
 let featuredIndex = 0;
+let featuredTimer = null;
 
 function cardsPerFeaturedView() {
   return window.innerWidth <= 768 ? 1 : 2;
@@ -211,23 +212,40 @@ function updateFeaturedCarousel() {
   });
 }
 
+function startFeaturedAutoplay() {
+  if (!featuredTrack || featuredCards.length <= cardsPerFeaturedView()) return;
+  clearInterval(featuredTimer);
+  featuredTimer = setInterval(() => {
+    featuredIndex = featuredIndex === maxFeaturedIndex() ? 0 : featuredIndex + 1;
+    updateFeaturedCarousel();
+  }, 4200);
+}
+
+function restartFeaturedAutoplay() {
+  startFeaturedAutoplay();
+}
+
 featuredPrev?.addEventListener("click", () => {
   featuredIndex = featuredIndex === 0 ? maxFeaturedIndex() : featuredIndex - 1;
   updateFeaturedCarousel();
+  restartFeaturedAutoplay();
 });
 
 featuredNext?.addEventListener("click", () => {
   featuredIndex = featuredIndex === maxFeaturedIndex() ? 0 : featuredIndex + 1;
   updateFeaturedCarousel();
+  restartFeaturedAutoplay();
 });
 
 window.addEventListener("resize", () => {
   buildFeaturedDots();
   updateFeaturedCarousel();
+  restartFeaturedAutoplay();
 });
 
 buildFeaturedDots();
 updateFeaturedCarousel();
+startFeaturedAutoplay();
 
 /* ACTIVE NAV LINK ON SCROLL */
 const sections = document.querySelectorAll("section[id]");
@@ -261,30 +279,3 @@ window.addEventListener("scroll", () => {
 backToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
-
-/* GRADUATION CONFETTI */
-function launchConfetti() {
-  const duration = 1800;
-  const end = Date.now() + duration;
-  const colors = ["#f2558f", "#ff6f61", "#ffea5f", "#37a8e8", "#96ead7", "#ffffff"];
-
-  (function frame() {
-    confetti({
-      particleCount: 4,
-      angle: 60,
-      spread: 55,
-      origin: { x: 0 },
-      colors: colors,
-    });
-    confetti({
-      particleCount: 4,
-      angle: 120,
-      spread: 55,
-      origin: { x: 1 },
-      colors: colors,
-    });
-    if (Date.now() < end) requestAnimationFrame(frame);
-  })();
-}
-
-document.querySelector(".hero-badge")?.addEventListener("click", launchConfetti);
