@@ -84,6 +84,12 @@ body.dark .navbar {
   font-weight: 800;
   color: var(--ink);
   letter-spacing: -0.02em;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: translateY(-1px);
 }
 
 body.dark .logo {
@@ -299,10 +305,10 @@ body.dark .blob { opacity: 0.08; }
 }
 
 #hero h1 {
-  font-family: var(--display-font);
-  font-size: clamp(2.45rem, 5.8vw, 4.45rem);
-  font-weight: 800;
-  line-height: 0.96;
+  font-family: "Arial Black", "Arial Bold", var(--display-font);
+  font-size: clamp(2.15rem, 4.9vw, 3.85rem);
+  font-weight: 900;
+  line-height: 0.98;
   letter-spacing: 0;
 }
 
