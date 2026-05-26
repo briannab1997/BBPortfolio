@@ -168,6 +168,67 @@ filterBtns.forEach((btn) => {
   });
 });
 
+/* FEATURED PROJECT SLIDESHOW */
+const featuredTrack = document.getElementById("featuredTrack");
+const featuredCards = featuredTrack ? Array.from(featuredTrack.querySelectorAll(".featured-project-card")) : [];
+const featuredDots = document.getElementById("featuredDots");
+const featuredPrev = document.getElementById("featuredPrev");
+const featuredNext = document.getElementById("featuredNext");
+let featuredIndex = 0;
+
+function cardsPerFeaturedView() {
+  return window.innerWidth <= 768 ? 1 : 2;
+}
+
+function maxFeaturedIndex() {
+  return Math.max(0, featuredCards.length - cardsPerFeaturedView());
+}
+
+function buildFeaturedDots() {
+  if (!featuredDots) return;
+  featuredDots.innerHTML = "";
+  for (let i = 0; i <= maxFeaturedIndex(); i++) {
+    const dot = document.createElement("button");
+    dot.className = "carousel-dot";
+    dot.type = "button";
+    dot.setAttribute("aria-label", `Show featured project ${i + 1}`);
+    dot.addEventListener("click", () => {
+      featuredIndex = i;
+      updateFeaturedCarousel();
+    });
+    featuredDots.appendChild(dot);
+  }
+}
+
+function updateFeaturedCarousel() {
+  if (!featuredTrack || !featuredCards.length) return;
+  featuredIndex = Math.min(featuredIndex, maxFeaturedIndex());
+  const cardWidth = featuredCards[0].getBoundingClientRect().width;
+  const gap = parseFloat(getComputedStyle(featuredTrack).gap) || 0;
+  featuredTrack.style.transform = `translateX(-${featuredIndex * (cardWidth + gap)}px)`;
+  featuredDots?.querySelectorAll(".carousel-dot").forEach((dot, index) => {
+    dot.classList.toggle("active", index === featuredIndex);
+  });
+}
+
+featuredPrev?.addEventListener("click", () => {
+  featuredIndex = featuredIndex === 0 ? maxFeaturedIndex() : featuredIndex - 1;
+  updateFeaturedCarousel();
+});
+
+featuredNext?.addEventListener("click", () => {
+  featuredIndex = featuredIndex === maxFeaturedIndex() ? 0 : featuredIndex + 1;
+  updateFeaturedCarousel();
+});
+
+window.addEventListener("resize", () => {
+  buildFeaturedDots();
+  updateFeaturedCarousel();
+});
+
+buildFeaturedDots();
+updateFeaturedCarousel();
+
 /* ACTIVE NAV LINK ON SCROLL */
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".nav-links a");
@@ -203,20 +264,20 @@ backToTopBtn.addEventListener("click", () => {
 
 /* GRADUATION CONFETTI */
 function launchConfetti() {
-  const duration = 3500;
+  const duration = 1800;
   const end = Date.now() + duration;
-  const colors = ["#d787a3", "#f2c9d9", "#ffffff", "#ffe0ef", "#c96b96"];
+  const colors = ["#f2558f", "#ff6f61", "#ffea5f", "#37a8e8", "#96ead7", "#ffffff"];
 
   (function frame() {
     confetti({
-      particleCount: 6,
+      particleCount: 4,
       angle: 60,
       spread: 55,
       origin: { x: 0 },
       colors: colors,
     });
     confetti({
-      particleCount: 6,
+      particleCount: 4,
       angle: 120,
       spread: 55,
       origin: { x: 1 },
@@ -226,6 +287,4 @@ function launchConfetti() {
   })();
 }
 
-window.addEventListener("load", () => {
-  setTimeout(launchConfetti, 800);
-});
+document.querySelector(".hero-badge")?.addEventListener("click", launchConfetti);

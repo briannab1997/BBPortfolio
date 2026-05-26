@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -54,11 +54,7 @@
 
     <!-- HERO -->
     <section id="hero">
-      <div class="hero-bg">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-      </div>
+      <div class="hero-bg"></div>
       <div class="hero-content">
         <div class="hero-text">
           <div class="hero-badge reveal">
@@ -110,7 +106,7 @@
         </div>
         <div class="stat-item reveal">
           <div class="stat-number-wrap">
-            <span class="stat-number" data-target="16">0</span><span class="stat-suffix">+</span>
+            <span class="stat-number" data-target="19">0</span><span class="stat-suffix">+</span>
           </div>
           <p class="stat-label">Projects Built</p>
         </div>
@@ -269,7 +265,41 @@
     <section id="projects">
       <h2 class="section-title reveal">Projects</h2>
 
-      <div class="featured-projects reveal">
+      <div class="featured-carousel reveal" aria-label="Featured project slideshow">
+        <div class="featured-carousel-head">
+          <div>
+            <span class="featured-label">Project Spotlight</span>
+            <h3>Featured Builds</h3>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-btn" id="featuredPrev" aria-label="Previous featured project">‹</button>
+            <button class="carousel-btn" id="featuredNext" aria-label="Next featured project">›</button>
+          </div>
+        </div>
+
+        <div class="featured-window">
+          <div class="featured-projects" id="featuredTrack">
+        <article class="featured-project-card">
+          <div class="featured-copy">
+            <span class="featured-label">Finance Dashboard</span>
+            <h3>BudgetWise</h3>
+            <p>
+              Multi-page personal finance app with overview metrics, transactions, budgets,
+              savings pots, recurring bills, local persistence, and tested finance calculations.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">Data UI</span>
+              <span class="project-tag">Testing</span>
+            </div>
+            <div class="project-buttons">
+              <a href="https://github.com/briannab1997/BB-BudgetWise" class="btn primary" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://briannab1997.github.io/BB-BudgetWise/" class="btn secondary" target="_blank" rel="noopener">Live Demo</a>
+            </div>
+          </div>
+          <img src="./assets/budgetwise-overview.png" alt="BudgetWise finance dashboard screenshot" />
+        </article>
+
         <article class="featured-project-card">
           <div class="featured-copy">
             <span class="featured-label">Featured</span>
@@ -312,6 +342,48 @@
           <img src="./assets/accessflow.png" alt="AccessFlow dashboard screenshot" />
         </article>
 
+        <article class="featured-project-card">
+          <div class="featured-copy">
+            <span class="featured-label">CRM Workflow</span>
+            <h3>CaseTrack</h3>
+            <p>
+              CRM-style case management dashboard with workflow lanes, case details,
+              SLA tracking, owner workload, search filters, and a mock service layer.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">CRM</span>
+              <span class="project-tag">Workflow</span>
+            </div>
+            <div class="project-buttons">
+              <a href="https://github.com/briannab1997/BB-CaseTrack" class="btn primary" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://briannab1997.github.io/BB-CaseTrack/" class="btn secondary" target="_blank" rel="noopener">Live Demo</a>
+            </div>
+          </div>
+          <img src="./assets/casetrack-dashboard.png" alt="CaseTrack CRM dashboard screenshot" />
+        </article>
+
+        <article class="featured-project-card">
+          <div class="featured-copy">
+            <span class="featured-label">Cloud + Backend Thinking</span>
+            <h3>CloudOps Monitor</h3>
+            <p>
+              Mock cloud operations dashboard for service health, incidents, deployments,
+              alert thresholds, and API-style data review with tested mock backend logic.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">Cloud Ops</span>
+              <span class="project-tag">Mock API</span>
+            </div>
+            <div class="project-buttons">
+              <a href="https://github.com/briannab1997/BB-CloudOps-Monitor" class="btn primary" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://briannab1997.github.io/BB-CloudOps-Monitor/" class="btn secondary" target="_blank" rel="noopener">Live Demo</a>
+            </div>
+          </div>
+          <img src="./assets/cloudops-monitor.png" alt="CloudOps Monitor dashboard screenshot" />
+        </article>
+
         <article class="featured-project-card compact-feature">
           <div class="featured-copy">
             <span class="featured-label">Game Logic</span>
@@ -326,6 +398,10 @@
             </div>
           </div>
         </article>
+          </div>
+        </div>
+
+        <div class="carousel-dots" id="featuredDots" aria-label="Featured project pagination"></div>
       </div>
 
       <div class="project-filter reveal">
@@ -440,6 +516,69 @@
         </div>
 
         <!-- DEV PROJECTS -->
+        <div class="project-card reveal" data-category="dev">
+          <div class="card-preview">
+            <img src="./assets/budgetwise-overview.png" alt="BudgetWise personal finance dashboard screenshot" />
+          </div>
+          <h3>BudgetWise</h3>
+          <p>
+            Personal finance dashboard with five app views: overview, transactions, budgets, savings pots,
+            and recurring bills. Includes local persistence, filters, budget progress, charting, and tests.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Finance</span>
+            <span class="project-tag">Data UI</span>
+            <span class="project-tag">Testing</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/briannab1997/BB-BudgetWise" class="btn primary" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://briannab1997.github.io/BB-BudgetWise/" class="btn secondary" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="dev">
+          <div class="card-preview">
+            <img src="./assets/casetrack-dashboard.png" alt="CaseTrack CRM dashboard screenshot" />
+          </div>
+          <h3>CaseTrack</h3>
+          <p>
+            CRM-style customer case workflow app with status lanes, case detail drawer, owner workload,
+            SLA timing, activity history, search filters, local storage, and tests.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">CRM</span>
+            <span class="project-tag">Workflow</span>
+            <span class="project-tag">Mock API</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/briannab1997/BB-CaseTrack" class="btn primary" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://briannab1997.github.io/BB-CaseTrack/" class="btn secondary" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="dev">
+          <div class="card-preview dark-preview">
+            <img src="./assets/cloudops-monitor.png" alt="CloudOps Monitor dashboard screenshot" />
+          </div>
+          <h3>CloudOps Monitor</h3>
+          <p>
+            Static cloud operations dashboard with service health, incident response, deployments,
+            alert thresholds, environment switching, API-style mock responses, and tested service logic.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Cloud Ops</span>
+            <span class="project-tag">Backend Logic</span>
+            <span class="project-tag">Testing</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/briannab1997/BB-CloudOps-Monitor" class="btn primary" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://briannab1997.github.io/BB-CloudOps-Monitor/" class="btn secondary" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+
         <div class="project-card reveal" data-category="dev">
           <div class="card-preview">
             <img src="./assets/accessflow.png" alt="AccessFlow dashboard screenshot" />
