@@ -1249,43 +1249,6 @@ body.dark .edu-major { color: #aaa; }
   margin-bottom: 0.75rem;
 }
 
-body.dark .edu-date { color: #aaa; }
-
-/* Progress bar */
-.degree-progress-wrap {
-  margin-top: 0.6rem;
-}
-
-.progress-track {
-  height: 7px;
-  background: var(--accent-light);
-  border-radius: 4px;
-  overflow: hidden;
-  margin-bottom: 0.3rem;
-}
-
-body.dark .progress-track {
-  background: #2e2230;
-}
-
-.progress-fill {
-  height: 100%;
-  width: 0;
-  background: linear-gradient(90deg, var(--accent), #e8a0bc);
-  border-radius: 4px;
-  transition: width 1.3s ease 0.3s;
-}
-
-.edu-card.visible .progress-fill {
-  width: var(--progress);
-}
-
-.progress-label {
-  font-size: 0.75rem;
-  color: var(--accent);
-  font-weight: 600;
-}
-
 /* Certification cards */
 .certs-grid {
   display: grid;
