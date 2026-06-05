@@ -32,6 +32,7 @@ toggle.addEventListener("click", () => {
 const scrollBar = document.getElementById("scrollBar");
 const navbar = document.querySelector(".navbar");
 const motionCards = document.querySelectorAll(".featured-project-card, .project-card, .cyber-card");
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function updateScrollState() {
   const scrollTop = window.scrollY;
@@ -40,15 +41,36 @@ function updateScrollState() {
   scrollBar.style.width = scrolled + "%";
   navbar.classList.toggle("scrolled", scrollTop > 60);
   document.body.style.setProperty("--scroll-ratio", Math.min(scrollTop / 700, 1).toFixed(3));
+  document.body.style.setProperty("--page-progress", (scrolled / 100).toFixed(3));
 }
 
 function updateMotionCards() {
+  if (reducedMotionQuery.matches) {
+    motionCards.forEach((card) => {
+      card.classList.remove("is-in-view");
+      card.style.removeProperty("--card-lift");
+      card.style.removeProperty("--card-scale");
+    });
+    return;
+  }
+
   const viewportFocus = window.innerHeight * 0.72;
 
   motionCards.forEach((card) => {
     const rect = card.getBoundingClientRect();
-    const isInView = rect.top < viewportFocus && rect.bottom > window.innerHeight * 0.18;
+    const isInView =
+      rect.top < viewportFocus &&
+      rect.bottom > window.innerHeight * 0.18 &&
+      rect.right > 0 &&
+      rect.left < window.innerWidth;
+    const cardCenter = rect.top + rect.height / 2;
+    const focus = 1 - Math.min(Math.abs(cardCenter - window.innerHeight / 2) / (window.innerHeight * 0.68), 1);
+    const lift = isInView ? (-10 * focus).toFixed(2) : "0";
+    const scale = isInView ? (1 + 0.018 * focus).toFixed(3) : "1";
+
     card.classList.toggle("is-in-view", isInView);
+    card.style.setProperty("--card-lift", `${lift}px`);
+    card.style.setProperty("--card-scale", scale);
   });
 }
 
@@ -66,6 +88,8 @@ window.addEventListener("pageshow", () => {
   updateScrollState();
   updateMotionCards();
 });
+
+reducedMotionQuery.addEventListener("change", updateMotionCards);
 
 /* SCROLL REVEAL */
 const reveals = document.querySelectorAll(".reveal");
