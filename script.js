@@ -31,13 +31,40 @@ toggle.addEventListener("click", () => {
 /* SCROLL PROGRESS BAR + NAV SHADOW */
 const scrollBar = document.getElementById("scrollBar");
 const navbar = document.querySelector(".navbar");
+const motionCards = document.querySelectorAll(".featured-project-card, .project-card, .cyber-card");
 
-window.addEventListener("scroll", () => {
+function updateScrollState() {
   const scrollTop = window.scrollY;
   const docHeight = document.body.scrollHeight - window.innerHeight;
-  const scrolled = (scrollTop / docHeight) * 100;
+  const scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
   scrollBar.style.width = scrolled + "%";
   navbar.classList.toggle("scrolled", scrollTop > 60);
+  document.body.style.setProperty("--scroll-ratio", Math.min(scrollTop / 700, 1).toFixed(3));
+}
+
+function updateMotionCards() {
+  const viewportFocus = window.innerHeight * 0.72;
+
+  motionCards.forEach((card) => {
+    const rect = card.getBoundingClientRect();
+    const isInView = rect.top < viewportFocus && rect.bottom > window.innerHeight * 0.18;
+    card.classList.toggle("is-in-view", isInView);
+  });
+}
+
+window.addEventListener("scroll", () => {
+  updateScrollState();
+  updateMotionCards();
+});
+
+window.addEventListener("resize", () => {
+  updateScrollState();
+  updateMotionCards();
+});
+
+window.addEventListener("pageshow", () => {
+  updateScrollState();
+  updateMotionCards();
 });
 
 /* SCROLL REVEAL */
@@ -63,6 +90,9 @@ const revealObserver = new IntersectionObserver(
 );
 
 reveals.forEach((el) => revealObserver.observe(el));
+
+updateScrollState();
+updateMotionCards();
 
 /* TYPING ANIMATION */
 const typedEl = document.getElementById("typedText");

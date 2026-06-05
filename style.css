@@ -31,6 +31,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
+  --scroll-ratio: 0;
   background:
     linear-gradient(90deg, rgba(250, 199, 216, 0.62) 0 12%, transparent 12% 100%),
     linear-gradient(180deg, #f9eef4 0%, #f6efe7 48%, #eaf5f8 100%);
@@ -229,7 +230,16 @@ body.dark .hamburger span {
       rgba(107, 215, 245, 0.18) 48% 60%,
       transparent 60% 100%
     );
-  opacity: 0.48;
+  opacity: 0.32;
+  background-size: 100% 100%, 180% 100%;
+  animation: summerWash 18s ease-in-out infinite alternate;
+  transform: translateY(calc(var(--scroll-ratio) * 14px));
+  transition: transform 0.08s linear;
+}
+
+@keyframes summerWash {
+  0% { background-position: center, 0% center; }
+  100% { background-position: center, 34% center; }
 }
 
 .blob {
@@ -390,6 +400,13 @@ body.dark .hero-summary { color: #bbb; }
     0 0 0 9px rgba(255, 214, 229, 0.9),
     0 0 0 15px rgba(255, 234, 95, 0.34),
     0 20px 54px rgba(55, 168, 232, 0.24);
+  animation: portraitFloat 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes portraitFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
 .hero-img {
@@ -517,14 +534,14 @@ body.dark .stat-label { color: #999; }
 /* ─── SCROLL REVEAL ──────────────────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(30px) scale(0.985);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--stagger, 0s);
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 /* ─── SKILLS ────────────────────────────────────── */
@@ -768,12 +785,14 @@ body.dark .cyber-section-head p {
   border-radius: 14px;
   background: rgba(250, 246, 240, 0.96);
   box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.cyber-card:hover {
+.cyber-card:hover,
+.cyber-card.is-in-view {
   transform: translateY(-6px);
   box-shadow: 0 24px 56px rgba(0, 0, 0, 0.34);
+  border-color: rgba(255, 214, 229, 0.46);
 }
 
 body.dark .cyber-card {
@@ -947,6 +966,14 @@ body.dark .cyber-card p {
   border: 1px solid rgba(31, 41, 55, 0.12);
   border-radius: 14px;
   box-shadow: 0 14px 34px rgba(31, 41, 55, 0.09);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.featured-project-card:hover,
+.featured-project-card.is-in-view {
+  transform: translateY(-5px);
+  box-shadow: 0 19px 42px rgba(31, 41, 55, 0.14);
+  border-color: rgba(242, 85, 143, 0.2);
 }
 
 body.dark .featured-project-card {
@@ -1081,7 +1108,7 @@ body.dark .filter-btn.active {
   border-radius: 14px;
   border: 1px solid rgba(31, 41, 55, 0.12);
   box-shadow: 0 16px 36px rgba(31, 41, 55, 0.09);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1091,9 +1118,11 @@ body.dark .project-card {
   background: var(--dark-card);
 }
 
-.project-card:hover {
+.project-card:hover,
+.project-card.is-in-view {
   transform: translateY(-6px);
   box-shadow: 0 20px 44px rgba(31, 41, 55, 0.15);
+  border-color: rgba(242, 85, 143, 0.24);
 }
 
 .qa-portfolio-card {
@@ -1493,6 +1522,24 @@ footer {
 
 body.dark {
   background: var(--dark-bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg,
+  .hero-photo-wrap,
+  .blob,
+  .badge-dot,
+  .cursor {
+    animation: none;
+  }
+
+  .hero-bg,
+  .reveal,
+  .featured-project-card,
+  .project-card,
+  .cyber-card {
+    transition: none;
+  }
 }
 
 /* ─── MOBILE ────────────────────────────────────── */
