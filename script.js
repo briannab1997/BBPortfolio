@@ -31,7 +31,7 @@ toggle.addEventListener("click", () => {
 /* SCROLL PROGRESS BAR + NAV SHADOW */
 const scrollBar = document.getElementById("scrollBar");
 const navbar = document.querySelector(".navbar");
-const motionCards = document.querySelectorAll(".featured-project-card, .project-card, .cyber-card");
+const motionCards = document.querySelectorAll(".tech-icon-card, .skill-category, .resume-showcase, .featured-project-card, .project-card, .cyber-card");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function updateScrollState() {
@@ -50,6 +50,7 @@ function updateMotionCards() {
       card.classList.remove("is-in-view");
       card.style.removeProperty("--card-lift");
       card.style.removeProperty("--card-scale");
+      card.style.removeProperty("--card-tilt");
     });
     return;
   }
@@ -67,10 +68,12 @@ function updateMotionCards() {
     const focus = 1 - Math.min(Math.abs(cardCenter - window.innerHeight / 2) / (window.innerHeight * 0.68), 1);
     const lift = isInView ? (-10 * focus).toFixed(2) : "0";
     const scale = isInView ? (1 + 0.018 * focus).toFixed(3) : "1";
+    const tilt = isInView && card.classList.contains("tech-icon-card") ? (2.5 * focus).toFixed(2) : "0";
 
     card.classList.toggle("is-in-view", isInView);
     card.style.setProperty("--card-lift", `${lift}px`);
     card.style.setProperty("--card-scale", scale);
+    card.style.setProperty("--card-tilt", `${tilt}deg`);
   });
 }
 
