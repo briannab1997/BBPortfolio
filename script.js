@@ -124,11 +124,12 @@ updateMotionCards();
 /* TYPING ANIMATION */
 const typedEl = document.getElementById("typedText");
 const phrases = [
-  "Product Support Engineer",
+  "Software Engineer",
   "QA-Minded Software Engineer",
-  "Technical Troubleshooter",
+  "Application Support",
+  "Technical Problem Solver",
   "Defect Triage & Documentation",
-  "Pharmacy Systems + Tech",
+  "Support-Focused Builder",
 ];
 
 let phraseIndex = 0;
