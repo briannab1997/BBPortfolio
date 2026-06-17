@@ -126,6 +126,8 @@ const typedEl = document.getElementById("typedText");
 const phrases = [
   "Full-Stack Software Engineer",
   "QA Analyst",
+  "Technical Support",
+  "Help Desk Support",
   "Application Support",
   "AWS Certified",
   "Technical Problem Solver",
