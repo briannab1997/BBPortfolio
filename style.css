@@ -12,7 +12,13 @@
   --summer-coral: #ff6f61;
   --summer-sun: #ffea5f;
   --summer-mint: #96ead7;
-  --summer-cream: #fff9ee;
+  --summer-cream: #f5eee5;
+  --page-cream: #f2e9df;
+  --page-blush: #f4dde7;
+  --page-blue: #dcecf1;
+  --surface: rgba(244, 237, 228, 0.92);
+  --surface-strong: #f4ede4;
+  --surface-soft: rgba(239, 230, 221, 0.76);
   --ink: #272131;
   --ink-panel: #171420;
   --ink-panel-2: #222738;
@@ -34,8 +40,8 @@ body {
   --scroll-ratio: 0;
   --page-progress: 0;
   background:
-    linear-gradient(90deg, rgba(250, 199, 216, 0.62) 0 12%, transparent 12% 100%),
-    linear-gradient(180deg, #f9eef4 0%, #f6efe7 48%, #eaf5f8 100%);
+    linear-gradient(90deg, rgba(238, 174, 198, 0.46) 0 12%, transparent 12% 100%),
+    linear-gradient(180deg, var(--page-blush) 0%, var(--page-cream) 48%, var(--page-blue) 100%);
   background-position:
     0 calc(var(--page-progress) * -90px),
     center;
@@ -69,7 +75,7 @@ body.dark {
   align-items: center;
   position: fixed;
   top: 0;
-  background: rgba(250, 246, 240, 0.9);
+  background: rgba(242, 233, 224, 0.92);
   border-bottom: 1px solid rgba(242, 85, 143, 0.13);
   box-shadow: 0 8px 28px rgba(242, 85, 143, 0.08);
   backdrop-filter: blur(18px);
@@ -298,7 +304,7 @@ body.dark .blob { opacity: 0.08; }
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  background: rgba(250, 246, 240, 0.78);
+  background: rgba(242, 233, 224, 0.82);
   border: 1px solid rgba(242, 85, 143, 0.28);
   color: var(--accent);
   padding: 0.3rem 0.9rem;
@@ -399,7 +405,7 @@ body.dark .hero-summary { color: #bbb; }
   height: 270px;
   border-radius: 50%;
   overflow: hidden;
-  border: 5px solid white;
+  border: 5px solid var(--surface-strong);
   box-shadow:
     0 0 0 9px rgba(255, 214, 229, 0.9),
     0 0 0 15px rgba(255, 234, 95, 0.34),
@@ -449,7 +455,7 @@ body.dark .hero-summary { color: #bbb; }
   font-weight: 600;
   padding: 0.3rem 0.85rem;
   border-radius: 999px;
-  background: rgba(250, 246, 240, 0.68);
+  background: rgba(242, 233, 224, 0.74);
   border: 1.5px solid rgba(242, 85, 143, 0.28);
   color: #a91f5a;
   letter-spacing: 0.02em;
@@ -463,7 +469,7 @@ body.dark .hero-skill-tag {
 /* ─── STATS ─────────────────────────────────────── */
 .stats-section {
   padding: 2.5rem 2rem;
-  background: rgba(250, 246, 240, 0.62);
+  background: rgba(238, 228, 218, 0.72);
   border-top: 1px solid rgba(242, 85, 143, 0.12);
   border-bottom: 1px solid rgba(55, 168, 232, 0.12);
 }
@@ -606,7 +612,7 @@ body.dark .skills-intro {
   border-radius: 14px;
   border: 1px solid rgba(242, 85, 143, 0.14);
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(250, 246, 240, 0.88)),
+    linear-gradient(145deg, rgba(248, 241, 232, 0.82), rgba(237, 229, 219, 0.9)),
     radial-gradient(circle at top, rgba(255, 232, 95, 0.18), transparent 44%);
   box-shadow: 0 14px 34px rgba(31, 41, 55, 0.08);
   transform: translateY(var(--card-lift)) scale(var(--card-scale)) rotateX(var(--card-tilt, 0deg));
@@ -662,7 +668,7 @@ body.dark .tech-icon-card span {
 .skill-category {
   --card-lift: 0px;
   --card-scale: 1;
-  background: rgba(250, 246, 240, 0.86);
+  background: var(--surface);
   border-radius: 14px;
   border: 1px solid rgba(242, 85, 143, 0.11);
   padding: 1.5rem;
@@ -742,7 +748,7 @@ body.dark .skill-tag:hover {
 }
 
 .exp-card {
-  background: rgba(250, 246, 240, 0.9);
+  background: var(--surface);
   border-radius: 14px;
   border: 1px solid rgba(55, 168, 232, 0.12);
   padding: 1.8rem;
@@ -755,7 +761,7 @@ body.dark .exp-card {
 
 .exp-card.featured {
   border-left: 5px solid var(--summer-coral);
-  background: linear-gradient(135deg, rgba(255, 214, 229, 0.48), rgba(250, 246, 240, 0.95));
+  background: linear-gradient(135deg, rgba(244, 191, 211, 0.38), rgba(241, 232, 222, 0.95));
 }
 
 body.dark .exp-card.featured {
@@ -902,7 +908,7 @@ body.dark .cyber-section-head p {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
-  background: rgba(250, 246, 240, 0.96);
+  background: rgba(244, 237, 228, 0.96);
   box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   transform: translateY(var(--card-lift)) scale(var(--card-scale));
@@ -987,7 +993,7 @@ body.dark .cyber-card p {
   height: 160px;
   overflow: hidden;
   border-radius: 14px 14px 0 0;
-  background: #f0f0f5;
+  background: #e8e3df;
 }
 
 .card-preview img {
@@ -1018,7 +1024,7 @@ body.dark .cyber-card p {
 #projects {
   padding: 5rem 2rem 3rem;
   background:
-    linear-gradient(180deg, rgba(250, 246, 240, 0.28), rgba(234, 245, 248, 0.46)),
+    linear-gradient(180deg, rgba(238, 228, 218, 0.42), rgba(220, 236, 241, 0.5)),
     linear-gradient(90deg, rgba(242, 85, 143, 0.08), transparent 30%, rgba(55, 168, 232, 0.08));
   border-top: 1px solid rgba(31, 41, 55, 0.08);
 }
@@ -1095,7 +1101,7 @@ body.dark .cyber-card p {
   overflow: hidden;
   background:
     linear-gradient(135deg, color-mix(in srgb, var(--theme-a) 10%, transparent), color-mix(in srgb, var(--theme-b) 10%, transparent)),
-    #fbf7f1;
+    var(--surface-strong);
   border: 1px solid rgba(31, 41, 55, 0.12);
   border-radius: 14px;
   box-shadow: 0 14px 34px rgba(31, 41, 55, 0.09);
@@ -1216,7 +1222,7 @@ body.dark .featured-project-card p {
   padding: 0.5rem 1.3rem;
   border-radius: 22px;
   border: 2px solid rgba(242, 85, 143, 0.25);
-  background: rgba(250, 246, 240, 0.72);
+  background: rgba(242, 233, 224, 0.78);
   color: var(--muted);
   font-size: 0.87rem;
   font-weight: 600;
@@ -1257,7 +1263,7 @@ body.dark .filter-btn.active {
   --card-scale: 1;
   background:
     linear-gradient(135deg, color-mix(in srgb, var(--theme-a) 9%, transparent), color-mix(in srgb, var(--theme-b) 8%, transparent)),
-    rgba(251, 247, 241, 0.96);
+    rgba(244, 237, 228, 0.96);
   padding: 1.6rem;
   border-radius: 14px;
   border: 1px solid rgba(31, 41, 55, 0.12);
@@ -1524,7 +1530,7 @@ body.dark .secondary {
 }
 
 .edu-card {
-  background: rgba(250, 246, 240, 0.9);
+  background: var(--surface);
   border-radius: 14px;
   border: 1px solid rgba(242, 85, 143, 0.1);
   padding: 1.8rem;
@@ -1614,7 +1620,7 @@ body.dark .edu-major { color: #aaa; }
 }
 
 .cert-card {
-  background: rgba(250, 246, 240, 0.9);
+  background: var(--surface);
   border-radius: 12px;
   border: 1px solid rgba(55, 168, 232, 0.1);
   padding: 1.2rem 1.4rem;
@@ -1752,7 +1758,7 @@ body.dark .cert-status.in-progress {
 .resume-preview-wrap {
   border: 1px solid rgba(242, 85, 143, 0.14);
   border-radius: 16px;
-  background: rgba(250, 246, 240, 0.9);
+  background: var(--surface);
   box-shadow: 0 20px 48px rgba(31, 41, 55, 0.1);
 }
 
@@ -1824,7 +1830,7 @@ body.dark .cert-status.in-progress {
   gap: 0.42rem;
   padding: 0.75rem 1rem;
   border-bottom: 1px solid rgba(31, 41, 55, 0.1);
-  background: rgba(255, 255, 255, 0.48);
+  background: rgba(236, 226, 216, 0.66);
 }
 
 .resume-preview-bar span {
@@ -1849,7 +1855,7 @@ body.dark .cert-status.in-progress {
   padding: 1.1rem;
   background:
     linear-gradient(135deg, rgba(31, 41, 55, 0.08), rgba(55, 168, 232, 0.08)),
-    #f7f8fb;
+    #ece8e3;
   overflow: auto;
 }
 
@@ -1860,7 +1866,7 @@ body.dark .cert-status.in-progress {
   margin: 0 auto;
   border: 0;
   border-radius: 10px;
-  background: white;
+  background: #f7f4ef;
   box-shadow: 0 18px 42px rgba(31, 41, 55, 0.18);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1987,7 +1993,7 @@ body.dark {
     top: 100%;
     left: 0;
     right: 0;
-    background: white;
+    background: var(--surface-strong);
     padding: 1.2rem 2rem;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     gap: 0.9rem;
