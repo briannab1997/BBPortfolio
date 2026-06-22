@@ -1082,6 +1082,9 @@ body.dark .cyber-card p {
 }
 
 .featured-project-card {
+  --theme-a: var(--accent);
+  --theme-b: #37a8e8;
+  --theme-c: #fff0a8;
   --card-lift: 0px;
   --card-scale: 1;
   flex: 0 0 calc((100% - 1.2rem) / 2);
@@ -1090,7 +1093,9 @@ body.dark .cyber-card p {
   gap: 1.2rem;
   align-items: stretch;
   overflow: hidden;
-  background: #fbf7f1;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--theme-a) 10%, transparent), color-mix(in srgb, var(--theme-b) 10%, transparent)),
+    #fbf7f1;
   border: 1px solid rgba(31, 41, 55, 0.12);
   border-radius: 14px;
   box-shadow: 0 14px 34px rgba(31, 41, 55, 0.09);
@@ -1102,7 +1107,7 @@ body.dark .cyber-card p {
 .featured-project-card:hover,
 .featured-project-card.is-in-view {
   box-shadow: 0 19px 42px rgba(31, 41, 55, 0.14);
-  border-color: rgba(242, 85, 143, 0.2);
+  border-color: color-mix(in srgb, var(--theme-a) 34%, rgba(31, 41, 55, 0.12));
 }
 
 .featured-project-card.reveal.visible {
@@ -1121,6 +1126,9 @@ body.dark .featured-project-card {
   object-fit: cover;
   object-position: left top;
   transition: transform 0.45s ease;
+  background:
+    radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--theme-a) 20%, transparent), transparent 32%),
+    linear-gradient(135deg, color-mix(in srgb, var(--theme-b) 22%, #101827), #101827);
 }
 
 .featured-project-card:hover img,
@@ -1139,8 +1147,8 @@ body.dark .featured-project-card {
   width: fit-content;
   margin-bottom: 0.75rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent-light), #fff0a8);
-  color: #8d2454;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--theme-a) 28%, white), color-mix(in srgb, var(--theme-c) 72%, white));
+  color: color-mix(in srgb, var(--theme-a) 74%, #1f2937);
   padding: 0.25rem 0.65rem;
   font-size: 0.68rem;
   font-weight: 800;
@@ -1242,9 +1250,14 @@ body.dark .filter-btn.active {
 }
 
 .project-card {
+  --theme-a: var(--accent);
+  --theme-b: #37a8e8;
+  --theme-c: #fff0a8;
   --card-lift: 0px;
   --card-scale: 1;
-  background: rgba(251, 247, 241, 0.96);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--theme-a) 9%, transparent), color-mix(in srgb, var(--theme-b) 8%, transparent)),
+    rgba(251, 247, 241, 0.96);
   padding: 1.6rem;
   border-radius: 14px;
   border: 1px solid rgba(31, 41, 55, 0.12);
@@ -1264,7 +1277,86 @@ body.dark .project-card {
 .project-card:hover,
 .project-card.is-in-view {
   box-shadow: 0 20px 44px rgba(31, 41, 55, 0.15);
-  border-color: rgba(242, 85, 143, 0.24);
+  border-color: color-mix(in srgb, var(--theme-a) 36%, rgba(31, 41, 55, 0.12));
+}
+
+.theme-data {
+  --theme-a: #00bbf0;
+  --theme-b: #00204a;
+  --theme-c: #fdb44b;
+}
+
+.theme-cleansight {
+  --theme-a: #f58f7c;
+  --theme-b: #2c2b30;
+  --theme-c: #f2c4ce;
+}
+
+.theme-ops {
+  --theme-a: #7c3aed;
+  --theme-b: #14b8a6;
+  --theme-c: #c4b5fd;
+}
+
+.theme-support {
+  --theme-a: #f59e0b;
+  --theme-b: #0f172a;
+  --theme-c: #bae6fd;
+}
+
+.theme-finance {
+  --theme-a: #22c55e;
+  --theme-b: #0f766e;
+  --theme-c: #dcfce7;
+}
+
+.theme-crm {
+  --theme-a: #2563eb;
+  --theme-b: #8b5cf6;
+  --theme-c: #dbeafe;
+}
+
+.theme-cloud {
+  --theme-a: #38bdf8;
+  --theme-b: #1e3a8a;
+  --theme-c: #e0f2fe;
+}
+
+.theme-workflow {
+  --theme-a: #ec4899;
+  --theme-b: #fb7185;
+  --theme-c: #fce7f3;
+}
+
+.theme-commerce {
+  --theme-a: #ef4444;
+  --theme-b: #f97316;
+  --theme-c: #fee2e2;
+}
+
+.theme-game {
+  --theme-a: #a3e635;
+  --theme-b: #16a34a;
+  --theme-c: #ecfccb;
+}
+
+.theme-ai {
+  --theme-a: #a855f7;
+  --theme-b: #111827;
+  --theme-c: #f0abfc;
+}
+
+.theme-learning {
+  --theme-a: #06b6d4;
+  --theme-b: #6366f1;
+  --theme-c: #cffafe;
+}
+
+.theme-portfolio,
+.theme-qa {
+  --theme-a: #f2558f;
+  --theme-b: #37a8e8;
+  --theme-c: #fff0a8;
 }
 
 .project-card.reveal.visible {
@@ -1364,8 +1456,8 @@ body.dark .project-card p { color: #bbb; }
 .project-tag {
   font-size: 0.7rem;
   font-weight: 700;
-  background: #e3f8ff;
-  color: #176987;
+  background: color-mix(in srgb, var(--theme-a) 14%, #ffffff);
+  color: color-mix(in srgb, var(--theme-b) 74%, #111827);
   padding: 0.2rem 0.6rem;
   border-radius: 8px;
   text-transform: uppercase;
