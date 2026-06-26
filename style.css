@@ -1346,6 +1346,12 @@ body.dark .project-card {
   --theme-c: #ecfccb;
 }
 
+.theme-media {
+  --theme-a: #ff6f61;
+  --theme-b: #100d16;
+  --theme-c: #3de0d0;
+}
+
 .theme-ai {
   --theme-a: #a855f7;
   --theme-b: #111827;

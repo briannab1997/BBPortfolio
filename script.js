@@ -124,14 +124,14 @@ updateMotionCards();
 /* TYPING ANIMATION */
 const typedEl = document.getElementById("typedText");
 const phrases = [
-  "Full-Stack Software Engineer",
-  "QA Analyst",
-  "Technical Support",
-  "Help Desk Support",
-  "Application Support",
+  "Software Engineer",
+  "Full-Stack Developer",
+  "Python + Data Workflows",
+  "Automation Builder",
+  "Product-Minded Problem Solver",
+  "QA-Minded Engineer",
   "AWS Certified",
-  "Technical Problem Solver",
-  "Detail-Driven Tester",
+  "Technical Support Ready",
 ];
 
 let phraseIndex = 0;
