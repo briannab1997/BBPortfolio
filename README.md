@@ -1,7 +1,7 @@
 # Brianna Brockington — Customer Success & Software Portfolio
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-briannab1997.github.io-blueviolet?style=flat-square&logo=github)](https://briannab1997.github.io/BBPortfolio/)
-[![Resume](https://img.shields.io/badge/Resume-Download%20PDF-blue?style=flat-square&logo=adobeacrobatreader)](./assets/bbrockington_resume.pdf)
+[![Resume](https://img.shields.io/badge/Resume-Download%20PDF-blue?style=flat-square&logo=adobeacrobatreader)](./assets/Brianna_Brockington_Resume_General_JAX_v6.pdf)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/brianna-brockington)
 
 ---
