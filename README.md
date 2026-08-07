@@ -1,4 +1,4 @@
-# Brianna Brockington — Developer Portfolio
+# Brianna Brockington — Customer Success & Software Portfolio
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-briannab1997.github.io-blueviolet?style=flat-square&logo=github)](https://briannab1997.github.io/BBPortfolio/)
 [![Resume](https://img.shields.io/badge/Resume-Download%20PDF-blue?style=flat-square&logo=adobeacrobatreader)](./assets/bbrockington_resume.pdf)
@@ -8,11 +8,11 @@
 
 ## About Me
 
-I'm a **Certified Pharmacy Technician turned Software Engineer** with 7+ years of experience spanning healthcare operations, IT support, and full-stack development. My career began in call center pharmacy environments at OptumRx and Centene, where I developed a strong IT foundation supporting systems, troubleshooting infrastructure, and bridging the gap between technical teams and clinical operations.
+I'm a **Customer Success Manager and software engineering graduate** with 7+ years of experience across healthcare operations, pharmacy workflows, technical support, QA-minded troubleshooting, documentation, and software projects.
 
-That hands-on experience fueled my passion for technology and led me to pursue a **B.S. in Software Engineering (Java concentration)** at Western Governors University (expected April 2026), while currently working as an IT Analyst at CenterWell.
+My work now sits at the intersection of health-tech, customer success, product support, and software. I enjoy helping users understand systems, turning workflow friction into clear documentation, and building practical projects that show how technology can make daily operations smoother.
 
-I hold certifications in **AWS Cloud Practitioner**, **CompTIA Network+**, and **ITIL Foundation**, and I'm passionate about building accessible, intuitive applications that solve real problems — especially at the intersection of healthcare and technology.
+I hold a **B.S. in Software Engineering** from Western Governors University and certifications including **AWS Certified Cloud Practitioner**, **CompTIA Network+**, **ITIL Foundation**, **Google IT Support Professional**, and **Google Cybersecurity Professional Certificate**.
 
 ---
 
@@ -20,10 +20,10 @@ I hold certifications in **AWS Cloud Practitioner**, **CompTIA Network+**, and *
 
 | Metric | Value |
 |---|---|
-| Projects Shipped | 5+ |
-| Years in IT & Dev | 7+ |
-| Certifications | 3 |
-| Hours of Development | 15,000+ |
+| Projects Built | 22+ |
+| Years in Healthcare + Tech | 7+ |
+| Certifications | 5 |
+| Current Focus | Customer Success + Product Support |
 
 ---
 
@@ -62,18 +62,19 @@ I hold certifications in **AWS Cloud Practitioner**, **CompTIA Network+**, and *
 | AWS Certified Cloud Practitioner | Amazon Web Services | ✅ Earned |
 | CompTIA Network+ | CompTIA | ✅ Earned |
 | ITIL Foundation | AXELOS / PeopleCert | ✅ Earned |
-| Google IT Support Certificate | Google / Coursera | 🔄 In Progress |
+| Google IT Support Professional Certificate | Google / Coursera | ✅ Earned |
+| Google Cybersecurity Professional Certificate | Google / Coursera | ✅ Earned |
 
 ---
 
 ## Experience
 
-**IT Analyst** — CenterWell *(Dec 2025 – Present)*
-**B.S. Software Engineering Student** — Western Governors University *(Expected Apr 2026)*
-**IT Analyst** — Centene Corporation *(Feb 2024 – Dec 2025)*
-**Pharmacy Technician / IT Support** — OptumRx *(May 2019 – Feb 2024)*
+**Customer Success Manager** — Scriptly *(Aug 2026 – Present)*  
+**Senior Engineer / Software Engineering Intern** — Kentish Publishing Company *(Mar 2026 – Jul 2026)*  
+**Certified Pharmacy Technician** — CenterWell Pharmacy *(Dec 2025 – Apr 2026)*  
+**Healthcare Operations and Technology** — Centene, OptumRx, Aetna *(2018 – 2025)*
 
-> My early career as a Certified Pharmacy Technician at call center pharmacies (OptumRx, Centene) gave me direct exposure to enterprise IT systems, healthcare platforms, and technical support — sparking my transition into software engineering.
+> My healthcare operations background gave me direct exposure to enterprise platforms, customer impact, compliance-driven workflows, documentation, and technical escalations. That experience now informs how I approach customer success, product support, QA, and software projects.
 
 ---
 
@@ -99,4 +100,4 @@ Built with **vanilla HTML, CSS, and JavaScript** — no frameworks, no dependenc
 
 ---
 
-*Open to full-time Software Engineering and IT roles. Let's connect!*
+*Building at the intersection of healthcare technology, customer success, product support, software engineering, data workflows, QA, and technical documentation.*

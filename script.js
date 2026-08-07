@@ -124,6 +124,8 @@ updateMotionCards();
 /* TYPING ANIMATION */
 const typedEl = document.getElementById("typedText");
 const phrases = [
+  "Customer Success Manager",
+  "Health-Tech Product Support",
   "Software Engineer",
   "Full-Stack Developer",
   "Python + Data Workflows",
@@ -131,7 +133,7 @@ const phrases = [
   "Product-Minded Problem Solver",
   "QA-Minded Engineer",
   "AWS Certified",
-  "Technical Support Ready",
+  "Technical Documentation",
 ];
 
 let phraseIndex = 0;
