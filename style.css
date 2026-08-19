@@ -2139,6 +2139,67 @@ body.dark .contact-subtitle { color: #bbb; }
   transform: translateY(-2px);
 }
 
+.signature-signoff {
+  width: min(620px, 92vw);
+  margin: 3rem auto 0;
+  padding: 1.25rem;
+  border: 1px solid rgba(215, 135, 163, 0.22);
+  border-radius: 26px;
+  background:
+    linear-gradient(135deg, rgba(255, 248, 250, 0.92), rgba(247, 238, 242, 0.72)),
+    var(--surface);
+  box-shadow: 0 16px 36px rgba(46, 33, 42, 0.08);
+}
+
+.signature-kicker {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: #b84f79;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.signature-draw {
+  position: relative;
+  height: clamp(88px, 14vw, 136px);
+  overflow: hidden;
+  border-radius: 18px;
+  background: #f5efe3;
+  clip-path: inset(0 100% 0 0);
+  transform: translateY(8px);
+  transition:
+    clip-path 2.8s cubic-bezier(0.65, 0, 0.2, 1),
+    transform 0.9s ease;
+}
+
+.signature-draw img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  filter: contrast(1.12) saturate(0.72);
+  mix-blend-mode: multiply;
+}
+
+.signature-signoff.visible .signature-draw,
+.signature-draw.is-signed {
+  clip-path: inset(0 0 0 0);
+  transform: translateY(0);
+}
+
+body.dark .signature-signoff {
+  border-color: rgba(248, 207, 224, 0.2);
+  background:
+    linear-gradient(135deg, rgba(248, 207, 224, 0.08), rgba(55, 168, 232, 0.08)),
+    #151722;
+}
+
+body.dark .signature-draw {
+  opacity: 0.88;
+}
+
 /* ─── FOOTER ────────────────────────────────────── */
 footer {
   padding: 2rem;
@@ -2173,9 +2234,14 @@ body.dark {
   .project-card,
   .card-preview img,
   .cyber-card,
+  .signature-draw,
   .cyber-preview img {
     transition: none;
     transform: none;
+  }
+
+  .signature-draw {
+    clip-path: inset(0 0 0 0);
   }
 }
 

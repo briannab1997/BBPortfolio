@@ -31,8 +31,20 @@ toggle.addEventListener("click", () => {
 /* SCROLL PROGRESS BAR + NAV SHADOW */
 const scrollBar = document.getElementById("scrollBar");
 const navbar = document.querySelector(".navbar");
-const motionCards = document.querySelectorAll(".tech-icon-card, .skill-category, .resume-showcase, .featured-project-card, .project-card, .cyber-card");
+const motionCards = document.querySelectorAll(".tech-icon-card, .skill-category, .resume-showcase, .featured-project-card, .project-card, .cyber-card, .signature-signoff");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const signatureDraw = document.querySelector(".signature-draw");
+
+function updateSignatureState() {
+  if (!signatureDraw || signatureDraw.classList.contains("is-signed")) return;
+
+  const rect = signatureDraw.getBoundingClientRect();
+  const shouldSign = rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
+
+  if (shouldSign) {
+    signatureDraw.classList.add("is-signed");
+  }
+}
 
 function updateScrollState() {
   const scrollTop = window.scrollY;
@@ -42,6 +54,7 @@ function updateScrollState() {
   navbar.classList.toggle("scrolled", scrollTop > 60);
   document.body.style.setProperty("--scroll-ratio", Math.min(scrollTop / 700, 1).toFixed(3));
   document.body.style.setProperty("--page-progress", (scrolled / 100).toFixed(3));
+  updateSignatureState();
 }
 
 function updateMotionCards() {
