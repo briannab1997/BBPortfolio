@@ -1,4 +1,4 @@
-# Brianna Brockington — Software Developer Portfolio
+# Brianna Brockington — Software Development and Customer Success
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-briannab1997.github.io-blueviolet?style=flat-square&logo=github)](https://briannab1997.github.io/BBPortfolio/)
 [![Software Resume](https://img.shields.io/badge/Software%20Resume-Download%20PDF-blue?style=flat-square&logo=adobeacrobatreader)](./assets/Brianna_Brockington_Resume_General_JAX_v6.pdf)
@@ -24,7 +24,7 @@ I hold a **B.S. in Software Engineering** from Western Governors University and 
 | Projects Built | 22+ |
 | Years in Healthcare + Tech | 7+ |
 | Certifications | 5 |
-| Current Focus | Software Development + Product Support |
+| Current Focus | Software Development + Customer Success |
 
 ---
 
