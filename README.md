@@ -50,9 +50,9 @@ I hold a **B.S. in Software Engineering** from Western Governors University and 
 ## Skills & Technologies
 
 **Languages:** JavaScript · Java · Python · C++ · HTML · CSS
-**Frameworks & Tools:** Angular · Node.js · React (basics) · Git · Docker · Jira · CI/CD
+**Frameworks & Tools:** Angular · Node.js · React (basics) · Git · Docker · Jira · Confluence · CI/CD
 **Cloud & Infrastructure:** AWS · CompTIA Network+ · ITIL
-**Developer Tools:** VS Code · Chrome DevTools · GitHub · MySQL
+**Developer Tools:** VS Code · Chrome DevTools · GitHub · MySQL · Codex · Claude · Cursor
 
 ---
 
