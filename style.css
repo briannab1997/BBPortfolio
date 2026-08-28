@@ -974,6 +974,17 @@ body.dark .exp-card.featured {
   margin-bottom: 0.2rem;
 }
 
+.exp-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 0;
+}
+
+.exp-title-copy {
+  min-width: 0;
+}
+
 .exp-company {
   font-size: 0.88rem;
   color: #777;
@@ -984,46 +995,47 @@ body.dark .exp-company { color: #aaa; }
 .company-logo-row {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.28rem;
   flex-wrap: wrap;
-  margin: -0.2rem 0 1.05rem;
+  flex: 0 0 auto;
 }
 
 .company-logo-chip {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 120px;
-  height: 48px;
-  padding: 0.45rem 0.8rem;
+  width: 42px;
+  height: 42px;
+  padding: 0.32rem;
   border: 1px solid rgba(75, 125, 133, 0.15);
-  border-radius: 12px;
+  border-radius: 10px;
   background: rgba(255, 252, 247, 0.78);
-  box-shadow: 0 10px 24px rgba(75, 58, 42, 0.08);
+  box-shadow: 0 8px 18px rgba(75, 58, 42, 0.08);
+  flex: 0 0 auto;
 }
 
 .company-logo-chip img {
   display: block;
-  max-width: 132px;
-  max-height: 34px;
+  max-width: 34px;
+  max-height: 28px;
   object-fit: contain;
 }
 
 .company-logo-chip.compact-logo {
-  min-width: 86px;
+  width: 42px;
 }
 
 .company-logo-chip.compact-logo img {
-  max-width: 74px;
-  max-height: 42px;
+  max-width: 32px;
+  max-height: 32px;
 }
 
 .company-logo-chip.wide-logo {
-  min-width: 155px;
+  width: 48px;
 }
 
 .company-logo-chip.wide-logo img {
-  max-width: 178px;
+  max-width: 40px;
 }
 
 .company-logo-chip.dark-logo {
@@ -1032,7 +1044,20 @@ body.dark .exp-company { color: #aaa; }
 }
 
 .multi-logo-row {
-  gap: 0.65rem;
+  max-width: 96px;
+  gap: 0.22rem;
+}
+
+.multi-logo-row .company-logo-chip {
+  width: 21px;
+  height: 21px;
+  padding: 0.15rem;
+  border-radius: 6px;
+}
+
+.multi-logo-row .company-logo-chip img {
+  max-width: 17px;
+  max-height: 14px;
 }
 
 body.dark .company-logo-chip {
