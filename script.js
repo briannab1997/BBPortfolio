@@ -34,6 +34,35 @@ const navbar = document.querySelector(".navbar");
 const motionCards = document.querySelectorAll(".tech-icon-card, .skill-category, .resume-showcase, .featured-project-card, .project-card, .cyber-card, .signature-signoff");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 const signatureDraw = document.querySelector(".signature-draw");
+const leafLayer = document.querySelector(".fall-leaf-layer");
+
+function buildFallLeaves() {
+  if (!leafLayer || reducedMotionQuery.matches) return;
+
+  const leafColors = [
+    "rgba(159, 62, 37, 0.34)",
+    "rgba(181, 86, 45, 0.34)",
+    "rgba(216, 165, 58, 0.3)",
+    "rgba(107, 63, 42, 0.28)",
+    "rgba(75, 125, 133, 0.22)",
+  ];
+
+  leafLayer.innerHTML = "";
+
+  Array.from({ length: 16 }).forEach((_, index) => {
+    const leaf = document.createElement("span");
+    leaf.className = "fall-leaf";
+    leaf.style.setProperty("--leaf-left", `${(index * 13 + 7) % 100}%`);
+    leaf.style.setProperty("--leaf-size", `${12 + (index % 5) * 3}px`);
+    leaf.style.setProperty("--leaf-delay", `${index * -1.7}s`);
+    leaf.style.setProperty("--leaf-duration", `${17 + (index % 6) * 2}s`);
+    leaf.style.setProperty("--leaf-sway", `${index % 2 === 0 ? 70 : -58}px`);
+    leaf.style.setProperty("--leaf-color", leafColors[index % leafColors.length]);
+    leafLayer.appendChild(leaf);
+  });
+}
+
+buildFallLeaves();
 
 function updateSignatureState() {
   if (!signatureDraw || signatureDraw.classList.contains("is-signed")) return;
@@ -105,7 +134,11 @@ window.addEventListener("pageshow", () => {
   updateMotionCards();
 });
 
-reducedMotionQuery.addEventListener("change", updateMotionCards);
+reducedMotionQuery.addEventListener("change", () => {
+  if (leafLayer) leafLayer.innerHTML = "";
+  buildFallLeaves();
+  updateMotionCards();
+});
 
 /* SCROLL REVEAL */
 const reveals = document.querySelectorAll(".reveal");
