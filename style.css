@@ -981,6 +981,69 @@ body.dark .exp-card.featured {
 
 body.dark .exp-company { color: #aaa; }
 
+.company-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: -0.2rem 0 1.05rem;
+}
+
+.company-logo-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  height: 48px;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(75, 125, 133, 0.15);
+  border-radius: 12px;
+  background: rgba(255, 252, 247, 0.78);
+  box-shadow: 0 10px 24px rgba(75, 58, 42, 0.08);
+}
+
+.company-logo-chip img {
+  display: block;
+  max-width: 132px;
+  max-height: 34px;
+  object-fit: contain;
+}
+
+.company-logo-chip.compact-logo {
+  min-width: 86px;
+}
+
+.company-logo-chip.compact-logo img {
+  max-width: 74px;
+  max-height: 42px;
+}
+
+.company-logo-chip.wide-logo {
+  min-width: 155px;
+}
+
+.company-logo-chip.wide-logo img {
+  max-width: 178px;
+}
+
+.company-logo-chip.dark-logo {
+  background: #101827;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.multi-logo-row {
+  gap: 0.65rem;
+}
+
+body.dark .company-logo-chip {
+  background: rgba(246, 238, 228, 0.9);
+  border-color: rgba(240, 197, 154, 0.18);
+}
+
+body.dark .company-logo-chip.dark-logo {
+  background: rgba(16, 24, 39, 0.94);
+}
+
 .exp-right {
   display: flex;
   flex-direction: column;
