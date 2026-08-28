@@ -1,4 +1,4 @@
-# Brianna Brockington — Software Development and Customer Success
+# Brianna Brockington — Technical Customer Success and Software Development
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-briannab1997.github.io-blueviolet?style=flat-square&logo=github)](https://briannab1997.github.io/BBPortfolio/)
 [![Software Resume](https://img.shields.io/badge/Software%20Resume-Download%20PDF-blue?style=flat-square&logo=adobeacrobatreader)](./assets/Brianna_Brockington_Resume_General_JAX_v6.pdf)
@@ -9,9 +9,9 @@
 
 ## About Me
 
-I'm a **software developer and Customer Success Manager** with 7+ years of experience across healthcare operations, pharmacy workflows, technical support, QA-minded troubleshooting, documentation, and software projects.
+I'm a **technical Customer Success Manager with a software engineering background** and 7+ years of experience across healthcare operations, pharmacy workflows, technical support, QA-minded troubleshooting, documentation, and software projects.
 
-My work now sits at the intersection of health-tech, customer success, product support, and software. I enjoy helping users understand systems, turning workflow friction into clear documentation, and building practical projects that show how technology can make daily operations smoother.
+My work now sits at the intersection of health-tech, customer success, product support, and software. I enjoy helping users understand systems, turning workflow friction into clear documentation, and building practical projects that make daily operations smoother.
 
 I hold a **B.S. in Software Engineering** from Western Governors University and certifications including **AWS Certified Cloud Practitioner**, **CompTIA Network+**, **ITIL Foundation**, **Google IT Support Professional**, and **Google Cybersecurity Professional Certificate**.
 
@@ -24,7 +24,7 @@ I hold a **B.S. in Software Engineering** from Western Governors University and 
 | Projects Built | 22+ |
 | Years in Healthcare + Tech | 7+ |
 | Certifications | 5 |
-| Current Focus | Software Development + Customer Success |
+| Current Focus | Technical Customer Success + Software Development |
 
 ---
 

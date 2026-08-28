@@ -170,17 +170,18 @@ updateMotionCards();
 /* TYPING ANIMATION */
 const typedEl = document.getElementById("typedText");
 const phrases = [
-  "Software Developer",
-  "Software Engineer",
-  "Full-Stack Developer",
+  "Customer Success Manager",
+  "Technical Customer Success",
+  "Product Support Specialist",
+  "Health-Tech Product Support",
+  "Software Engineering Background",
   "JavaScript + React",
   "Python + Data Workflows",
-  "Automation Builder",
-  "QA-Minded Engineer",
-  "AWS Certified",
-  "Health-Tech Product Support",
-  "Product-Minded Problem Solver",
   "Technical Documentation",
+  "Product-Minded Problem Solver",
+  "QA-Minded Troubleshooter",
+  "Automation Builder",
+  "AWS Certified",
 ];
 
 let phraseIndex = 0;

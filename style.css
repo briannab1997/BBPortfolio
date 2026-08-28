@@ -1498,6 +1498,12 @@ body.dark .project-card {
   --theme-c: #bae6fd;
 }
 
+.theme-accountpulse {
+  --theme-a: #9f3e25;
+  --theme-b: #4b7d85;
+  --theme-c: #f0c27b;
+}
+
 .theme-finance {
   --theme-a: #22c55e;
   --theme-b: #0f766e;
@@ -1557,6 +1563,178 @@ body.dark .project-card {
   --theme-a: #f2558f;
   --theme-b: #37a8e8;
   --theme-c: #fff0a8;
+}
+
+.accountpulse-preview,
+.accountpulse-card-preview {
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 0.85rem;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(240, 194, 123, 0.34), transparent 31%),
+    linear-gradient(135deg, #2d211b 0%, #553022 48%, #315c62 100%);
+  color: #fff9ef;
+  overflow: hidden;
+  position: relative;
+}
+
+.accountpulse-preview {
+  min-height: 280px;
+  padding: 1.1rem;
+}
+
+.accountpulse-card-preview {
+  align-items: stretch;
+  padding: 0.9rem;
+}
+
+.accountpulse-preview::before,
+.accountpulse-card-preview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 249, 239, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 249, 239, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(120deg, transparent 0%, black 28%, black 72%, transparent 100%);
+  pointer-events: none;
+}
+
+.ap-sidebar,
+.ap-main {
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 249, 239, 0.16);
+  background: rgba(23, 19, 18, 0.58);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.ap-sidebar {
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+  border-radius: 16px;
+  padding: 0.85rem 0.65rem;
+}
+
+.ap-sidebar span {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 249, 239, 0.23);
+}
+
+.ap-sidebar span:first-child {
+  height: 36px;
+  width: 36px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f58f7c, #f0c27b);
+}
+
+.ap-main {
+  border-radius: 18px;
+  padding: 0.9rem;
+}
+
+.ap-topline,
+.ap-bars,
+.ap-table {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.ap-topline {
+  grid-template-columns: 1fr 54px;
+  margin-bottom: 0.8rem;
+}
+
+.ap-topline span,
+.ap-bars span,
+.ap-table span {
+  border-radius: 999px;
+  background: rgba(255, 249, 239, 0.28);
+}
+
+.ap-topline span {
+  height: 12px;
+}
+
+.ap-health {
+  display: grid;
+  place-items: center;
+  width: min(118px, 48%);
+  aspect-ratio: 1;
+  margin: 0 auto 0.85rem;
+  border-radius: 50%;
+  background:
+    conic-gradient(#f0c27b 0 82%, rgba(255, 249, 239, 0.16) 82% 100%);
+  box-shadow: 0 0 0 10px rgba(255, 249, 239, 0.08);
+}
+
+.ap-health strong {
+  color: #fff9ef;
+  font-size: 2.35rem;
+  line-height: 0.85;
+}
+
+.ap-health span {
+  color: rgba(255, 249, 239, 0.76);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.ap-bars {
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  align-items: end;
+  min-height: 48px;
+  margin-bottom: 0.85rem;
+}
+
+.ap-bars span {
+  align-self: end;
+}
+
+.ap-bars span:nth-child(1) {
+  height: 46px;
+  background: #f58f7c;
+}
+
+.ap-bars span:nth-child(2) {
+  height: 30px;
+  background: #f0c27b;
+}
+
+.ap-bars span:nth-child(3) {
+  height: 38px;
+  background: #73b7bf;
+}
+
+.ap-table span {
+  height: 11px;
+  background: rgba(255, 249, 239, 0.18);
+}
+
+.project-card:hover .accountpulse-card-preview .ap-health,
+.project-card.is-in-view .accountpulse-card-preview .ap-health,
+.featured-project-card:hover .accountpulse-preview .ap-health,
+.featured-project-card.is-in-view .accountpulse-preview .ap-health {
+  transform: scale(1.04);
+}
+
+.accountpulse-preview .ap-health,
+.accountpulse-card-preview .ap-health,
+.accountpulse-preview .ap-bars span,
+.accountpulse-card-preview .ap-bars span {
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.project-card:hover .accountpulse-card-preview .ap-bars span,
+.project-card.is-in-view .accountpulse-card-preview .ap-bars span,
+.featured-project-card:hover .accountpulse-preview .ap-bars span,
+.featured-project-card.is-in-view .accountpulse-preview .ap-bars span {
+  filter: saturate(1.18) brightness(1.06);
+  transform: translateY(-4px);
 }
 
 .project-card.reveal.visible {
