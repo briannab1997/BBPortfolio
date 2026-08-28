@@ -535,8 +535,10 @@ body.dark .hero-summary { color: #bbb; }
 }
 
 body.dark .hero-skill-tag {
-  border-color: rgba(215, 135, 163, 0.3);
-  color: var(--accent-light);
+  background: rgba(33, 29, 24, 0.82);
+  border-color: rgba(240, 197, 154, 0.44);
+  color: #f8efe3;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
 }
 
 /* ─── STATS ─────────────────────────────────────── */
@@ -1883,9 +1885,14 @@ body.dark .project-tag {
 }
 
 body.dark .secondary {
-  background: transparent;
-  color: var(--accent-light);
-  border-color: var(--accent-light);
+  background: rgba(33, 29, 24, 0.48);
+  color: #f8efe3;
+  border-color: rgba(240, 197, 154, 0.86);
+}
+
+body.dark .secondary:hover {
+  background: rgba(240, 197, 154, 0.14);
+  border-color: #f8efe3;
 }
 
 /* ─── EDUCATION ─────────────────────────────────── */
