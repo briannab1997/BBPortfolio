@@ -1,8 +1,8 @@
 # Brianna Brockington — Technical Customer Success and Software Development
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-briannab1997.github.io-blueviolet?style=flat-square&logo=github)](https://briannab1997.github.io/BBPortfolio/)
-[![Software Resume](https://img.shields.io/badge/Software%20Resume-Download%20PDF-blue?style=flat-square&logo=adobeacrobatreader)](./assets/Brianna_Brockington_Resume_General_JAX_v6.pdf)
-[![CSM Resume](https://img.shields.io/badge/CSM%20Resume-Download%20PDF-0A66C2?style=flat-square&logo=adobeacrobatreader)](./assets/Brianna_Brockington_Resume_General_CSM_JAX_v1.pdf)
+[![Engineer Resume](https://img.shields.io/badge/Engineer%20Resume-Download%20PDF-blue?style=flat-square&logo=adobeacrobatreader)](./assets/Brianna_Brockington_Resume_General_Engineer.pdf)
+[![CSM Resume](https://img.shields.io/badge/CSM%20Resume-Download%20PDF-0A66C2?style=flat-square&logo=adobeacrobatreader)](./assets/Brianna_Brockington_Resume_General_CSM.pdf)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/brianna-brockington)
 
 ---
