@@ -21,7 +21,7 @@ I hold a **B.S. in Software Engineering** from Western Governors University and 
 
 | Metric | Value |
 |---|---|
-| Projects Built | 22+ |
+| Projects Built | 23+ |
 | Years in Healthcare + Tech | 7+ |
 | Certifications | 5 |
 | Current Focus | Technical Customer Success + Software Development |
