@@ -71,6 +71,8 @@ I hold a **B.S. in Software Engineering** from Western Governors University and 
 ## Experience
 
 **Customer Success Manager** — Scriptly *(Aug 2026 – Present)*  
+Supporting health-tech customer success across pharmacy platform adoption, dedicated enterprise account workflows, shared tracker management, release readiness, technical documentation, and cross-functional coordination with support, QA, product, and engineering.
+
 **Software Engineering Intern** — Kentish Publishing Company *(Mar 2026 – Jul 2026)*  
 **Certified Pharmacy Technician** — CenterWell Pharmacy *(Dec 2025 – Apr 2026)*  
 **Healthcare Operations and Technology** — Centene, OptumRx, Aetna *(2018 – 2025)*
