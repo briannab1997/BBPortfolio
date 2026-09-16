@@ -30,20 +30,18 @@ I hold a **B.S. in Software Engineering** from Western Governors University and 
 
 ## Featured Projects
 
-### 🌸 BlossomAI
-> AI-powered journaling app with mood tracking and natural language insights.
+### AccountPulse
+Customer health workspace for account status, risk signals, implementation progress, and follow-up.
 
-**Tech:** HTML · CSS · JavaScript · Node.js · OpenAI API
+### LaunchBoard
+Release readiness tracker for customer success, support, QA, product, and engineering coordination.
 
-### 🍽️ Flavor Finder
-> Recipe discovery app that generates meal ideas based on ingredients you already have.
+### HelpDeskFlow
+Service desk workspace for ticket triage, SLA visibility, escalation notes, and support workflows.
 
-**Tech:** HTML · CSS · JavaScript · Spoonacular API
+The selected project grid also includes QA Testing Lab, OpsSignal AI, Data Pipeline, CaseTrack, AccessFlow, and Luminary. Incident Command, SOC Triage, and InfraShield remain in the separate Operations + Security section. Other projects remain in their repositories but are omitted from the portfolio to keep the page focused.
 
-### 📝 Task Manager
-> Full-featured productivity app with task categorization, priority flags, and local persistence.
-
-**Tech:** HTML · CSS · JavaScript
+Experience descriptions use generalized responsibilities, without customer identities, internal tickets, or employer documents.
 
 ---
 
