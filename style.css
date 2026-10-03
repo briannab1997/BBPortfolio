@@ -1,3 +1,29 @@
+.career-focus {
+  font-weight: 600;
+  margin-block: 0.75rem;
+  overflow-wrap: anywhere;
+}
+
+.release-case {
+  margin: 2rem 0;
+  padding: 1.25rem 0;
+  border-block: 1px solid currentColor;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.release-case summary { cursor: pointer; font-weight: 600; }
+.release-case summary span { display: inline-block; font-weight: 400; margin-left: 0.5rem; }
+.release-case summary:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+.release-case p, .release-case h3, .case-states, .case-records, .release-case blockquote { margin-top: 1rem; }
+.release-case h3 { font-size: 1.1rem; }
+.case-states { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.case-states dt { font-weight: 600; }
+.case-records { padding-left: 1.4rem; }
+.case-records li + li { margin-top: 0.75rem; }
+.release-case blockquote { border-left: 3px solid currentColor; padding-left: 1rem; }
+@media (max-width: 640px) { .case-states { grid-template-columns: 1fr; } }
+
 * {
   margin: 0;
   padding: 0;
